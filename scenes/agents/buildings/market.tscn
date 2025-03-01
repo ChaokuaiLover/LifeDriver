@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://eg1gj4vdl7ib"]
+
+[ext_resource type="Texture2D" uid="uid://cndbxyfrvgijf" path="res://assets/market.png" id="1_0hen8"]
+[ext_resource type="Script" path="res://scripts/agent/building/Market/market.gd" id="2_lgnsj"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/money_label.gd" id="3_5li7k"]
+[ext_resource type="Script" path="res://scripts/agent/building/Market/state_machine.gd" id="3_odpf7"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/price_label.gd" id="4_6sq4k"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/name_label.gd" id="5_11eng"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_lw64d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_545c7"]
+radius = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucvmd"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_g6fty"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_safuq"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_mqsv7"]
+font_size = 32
+
+[node name="market" type="Sprite2D" groups=["AllUnit", "FoodMarket", "Market"]]
+texture = ExtResource("1_0hen8")
+script = ExtResource("2_lgnsj")
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_545c7")
+
+[node name="NameLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -40.0
+offset_right = 52.0
+offset_bottom = 5.0
+scale = Vector2(0.241808, 0.241808)
+text = "test"
+label_settings = SubResource("LabelSettings_ucvmd")
+script = ExtResource("5_11eng")
+unit = NodePath("../..")
+
+[node name="MoneyLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -34.0
+offset_right = 52.0
+offset_bottom = 11.0
+scale = Vector2(0.243366, 0.243366)
+text = "test"
+label_settings = SubResource("LabelSettings_g6fty")
+script = ExtResource("3_5li7k")
+unit = NodePath("../..")
+
+[node name="PriceLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -28.0
+offset_right = 52.0
+offset_bottom = 17.0
+scale = Vector2(0.239528, 0.239528)
+text = "test"
+label_settings = SubResource("LabelSettings_safuq")
+script = ExtResource("4_6sq4k")
+unit = NodePath("../..")
+
+[node name="FoodStockLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -22.0
+offset_right = 52.0
+offset_bottom = 23.0
+scale = Vector2(0.23791, 0.23791)
+text = "test"
+label_settings = SubResource("LabelSettings_mqsv7")
+script = ExtResource("6_lw64d")
+unit = NodePath("../..")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_odpf7")

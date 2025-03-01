@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bihkdrbp4r57u"]
+
+[ext_resource type="Script" path="res://scripts/List/work_building_list.gd" id="1_4jih6"]
+
+[node name="WorkBuildingList" type="Node" groups=["WorkBuildingList"]]
+script = ExtResource("1_4jih6")

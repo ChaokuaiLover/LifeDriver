@@ -1,0 +1,135 @@
+[gd_scene load_steps=21 format=3 uid="uid://dc0c4xti7xuk5"]
+
+[ext_resource type="Script" path="res://scripts/agent/worker/worker_01.gd" id="1_2wn1j"]
+[ext_resource type="Texture2D" uid="uid://b88a0q3p5nf5b" path="res://assets/Agents/Agent01.png" id="2_oa74u"]
+[ext_resource type="Script" path="res://scripts/States/StateMachine.gd" id="3_5shy0"]
+[ext_resource type="Script" path="res://scripts/agent/worker/debt_label.gd" id="5_qgpo4"]
+[ext_resource type="Script" path="res://scripts/agent/worker/work.gd" id="5_ybwji"]
+[ext_resource type="Script" path="res://scripts/agent/worker/food_label.gd" id="6_a5yap"]
+[ext_resource type="Script" path="res://scripts/agent/worker/Loan.gd" id="6_yxcw5"]
+[ext_resource type="Script" path="res://scripts/agent/worker/label.gd" id="7_6n6mn"]
+[ext_resource type="Script" path="res://scripts/agent/worker/energy_label.gd" id="7_jytxs"]
+[ext_resource type="Script" path="res://scripts/agent/worker/store_food.gd" id="9_1avfs"]
+[ext_resource type="Script" path="res://scripts/agent/worker/buy_food.gd" id="9_opg8h"]
+[ext_resource type="Script" path="res://scripts/agent/worker/go_to_house.gd" id="10_0srnm"]
+[ext_resource type="Script" path="res://scripts/agent/worker/pay_loan.gd" id="10_nhtk6"]
+[ext_resource type="Script" path="res://scripts/agent/worker/rest.gd" id="12_bgufj"]
+[ext_resource type="Script" path="res://scripts/agent/worker/buy_house.gd" id="14_gbnfg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3pk0"]
+font_size = 32
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cmto0"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_r73ym"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_23gpt"]
+font_size = 32
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6028"]
+radius = 2.0
+
+[node name="worker" type="CharacterBody2D" groups=["AllUnit", "Worker"]]
+z_index = 2
+collision_layer = 4
+collision_mask = 3
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2wn1j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_oa74u")
+
+[node name="MoneyLabel" type="Label" parent="Sprite2D" node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -5.0
+offset_top = -16.0
+offset_right = 54.0
+offset_bottom = 29.0
+scale = Vector2(0.168215, 0.166013)
+text = "test"
+label_settings = SubResource("LabelSettings_h3pk0")
+script = ExtResource("7_jytxs")
+unit = NodePath("../..")
+
+[node name="EnergyLabel" type="Label" parent="Sprite2D" node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 56.0
+offset_bottom = 25.0
+scale = Vector2(0.165214, 0.162478)
+text = "test"
+label_settings = SubResource("LabelSettings_cmto0")
+script = ExtResource("7_6n6mn")
+unit = NodePath("../..")
+
+[node name="DebtLabel" type="Label" parent="Sprite2D" node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -5.0
+offset_top = -12.0
+offset_right = 55.0
+offset_bottom = 33.0
+scale = Vector2(0.166568, 0.166568)
+text = "test"
+label_settings = SubResource("LabelSettings_r73ym")
+script = ExtResource("5_qgpo4")
+unit = NodePath("../..")
+
+[node name="FoodLabel" type="Label" parent="Sprite2D" node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 54.0
+offset_bottom = 37.0
+scale = Vector2(0.168304, 0.168304)
+text = "test"
+label_settings = SubResource("LabelSettings_23gpt")
+script = ExtResource("6_a5yap")
+unit = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_f6028")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "worker")]
+script = ExtResource("3_5shy0")
+initial_state = NodePath("BuyHouse")
+worker = NodePath("..")
+
+[node name="GoToHouse" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("10_0srnm")
+worker = NodePath("../..")
+
+[node name="Loan" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("6_yxcw5")
+worker = NodePath("../..")
+
+[node name="PayLoan" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("10_nhtk6")
+worker = NodePath("../..")
+
+[node name="StoreFood" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("9_1avfs")
+worker = NodePath("../..")
+
+[node name="Rest" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("12_bgufj")
+worker = NodePath("../..")
+
+[node name="BuyFood" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("9_opg8h")
+worker = NodePath("../..")
+
+[node name="Work" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("5_ybwji")
+worker = NodePath("../..")
+
+[node name="BuyHouse" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
+script = ExtResource("14_gbnfg")
+worker = NodePath("../..")
+
+[node name="FindWork" type="Node" parent="StateMachine"]

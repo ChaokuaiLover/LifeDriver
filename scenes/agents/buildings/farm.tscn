@@ -1,0 +1,110 @@
+[gd_scene load_steps=16 format=3 uid="uid://rd83y2dtu8us"]
+
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_vhxxt"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/farm.gd" id="2_o8ud1"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/state_machine.gd" id="3_sv4mr"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_x2qtd"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/money_label.gd" id="7_qpxiq"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/wage_label.gd" id="7_t0hyy"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/name_label.gd" id="8_1veph"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/debt_label.gd" id="8_g3buh"]
+[ext_resource type="Script" path="res://scripts/agent/building/Farm/loan.gd" id="9_ntlv2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jlf8a"]
+radius = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_p81pv"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbuyh"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_vpdve"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3p81"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_x1w7c"]
+font_size = 32
+
+[node name="farm" type="Sprite2D" groups=["AllUnit", "Farm", "WorkBuilding", "WorkBuildingList"]]
+texture = ExtResource("1_vhxxt")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+script = ExtResource("2_o8ud1")
+
+[node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_jlf8a")
+
+[node name="NameLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -40.0
+offset_right = 52.0
+offset_bottom = 5.0
+scale = Vector2(0.241808, 0.241808)
+text = "test"
+label_settings = SubResource("LabelSettings_p81pv")
+script = ExtResource("8_1veph")
+unit = NodePath("../..")
+
+[node name="MoneyLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -34.0
+offset_right = 52.0
+offset_bottom = 11.0
+scale = Vector2(0.243366, 0.243366)
+text = "test"
+label_settings = SubResource("LabelSettings_tbuyh")
+script = ExtResource("7_qpxiq")
+unit = NodePath("../..")
+
+[node name="FoodStockLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -28.0
+offset_right = 52.0
+offset_bottom = 17.0
+scale = Vector2(0.23791, 0.23791)
+text = "test"
+label_settings = SubResource("LabelSettings_vpdve")
+script = ExtResource("6_x2qtd")
+unit = NodePath("../..")
+
+[node name="WageLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -22.0
+offset_right = 52.0
+offset_bottom = 23.0
+scale = Vector2(0.245074, 0.245074)
+text = "test"
+label_settings = SubResource("LabelSettings_k3p81")
+script = ExtResource("7_t0hyy")
+unit = NodePath("../..")
+
+[node name="DebtLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+visible = false
+z_index = 2
+offset_left = -7.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 29.0
+scale = Vector2(0.234619, 0.234619)
+text = "test"
+label_settings = SubResource("LabelSettings_x1w7c")
+script = ExtResource("8_g3buh")
+unit = NodePath("../..")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_sv4mr")
+
+[node name="Loan" type="Node" parent="StateMachine" node_paths=PackedStringArray("farm")]
+script = ExtResource("9_ntlv2")
+farm = NodePath("../..")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpaxdi1g63els"]
+
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_nel3l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_woic0"]
+radius = 4.0
+
+[node name="Coal" type="Sprite2D" groups=["AllUnit"]]
+texture = ExtResource("1_nel3l")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_woic0")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="StateMachine"]
+
+[node name="Node2" type="Node" parent="StateMachine"]

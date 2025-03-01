@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://0gaxjqiwfn7n"]
+
+[ext_resource type="Texture2D" uid="uid://d2ynqkx3dld38" path="res://assets/ruler.png" id="1_7cw20"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n1i0n"]
+radius = 16.0
+
+[node name="ruler" type="Sprite2D"]
+texture = ExtResource("1_7cw20")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_n1i0n")

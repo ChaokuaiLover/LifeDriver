@@ -1,0 +1,215 @@
+[gd_scene load_steps=23 format=3 uid="uid://dh172vnuik5xc"]
+
+[ext_resource type="Script" path="res://scripts/agent/Player/Player.gd" id="1_pjw63"]
+[ext_resource type="Script" path="res://scripts/agent/Player/panel.gd" id="3_3wkd1"]
+[ext_resource type="Script" path="res://scripts/agent/interest_rates.gd" id="4_3tanj"]
+[ext_resource type="Script" path="res://scripts/agent/Player/time_show.gd" id="4_bheox"]
+[ext_resource type="Script" path="res://scripts/agent/Player/total_money_show.gd" id="4_bj0et"]
+[ext_resource type="Script" path="res://scripts/agent/Player/food_price_mean.gd" id="6_qco1f"]
+[ext_resource type="Script" path="res://scripts/agent/Player/sad_people_show.gd" id="7_a7p3r"]
+[ext_resource type="Script" path="res://scripts/agent/Player/total_debt.gd" id="8_8l178"]
+[ext_resource type="Script" path="res://scripts/agent/Player/poppulation_show.gd" id="9_a5vrh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ls3rr"]
+size = Vector2(15, 12)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i5l0h"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_thioy"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_mt5l5"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_h6xqn"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ln76"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nx4nl"]
+line_spacing = 6.0
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_655r6"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_l45e1"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_r055t"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_ajsp6"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nqcf8"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkjix"]
+font_size = 32
+
+[node name="player" type="CharacterBody2D" groups=["Player"]]
+z_index = 6
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_pjw63")
+move_speed = 8000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_ls3rr")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+visible = false
+offset_left = -383.0
+offset_top = -215.0
+offset_right = 64.0
+offset_bottom = -161.0
+scale = Vector2(1.17154, 1.51406)
+script = ExtResource("3_3wkd1")
+
+[node name="time_show" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 3.41432
+offset_top = 13.87
+offset_right = 62.4143
+offset_bottom = 58.87
+scale = Vector2(0.226013, 0.199018)
+text = "test"
+label_settings = SubResource("LabelSettings_i5l0h")
+script = ExtResource("4_bheox")
+
+[node name="time_top" type="Label" parent="Camera2D/Panel"]
+layout_mode = 2
+offset_left = 4.70173
+offset_top = 7.0526
+offset_right = 80.7017
+offset_bottom = 52.0526
+scale = Vector2(0.211955, 0.221011)
+text = "Time"
+label_settings = SubResource("LabelSettings_thioy")
+
+[node name="TotalMoney" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 61.114
+offset_top = 22.0526
+offset_right = 250.115
+offset_bottom = 69.0527
+scale = Vector2(0.181709, 0.203148)
+text = "total money"
+label_settings = SubResource("LabelSettings_mt5l5")
+
+[node name="TotalDebt" type="Label" parent="Camera2D/Panel" node_paths=PackedStringArray("player")]
+layout_mode = 0
+offset_left = 41.8253
+offset_top = 33.0238
+offset_right = 291.825
+offset_bottom = 78.0238
+scale = Vector2(0.21, 0.209)
+text = "test"
+label_settings = SubResource("LabelSettings_h6xqn")
+horizontal_alignment = 2
+script = ExtResource("8_8l178")
+player = NodePath("../../..")
+
+[node name="TotalMoneyShow" type="Label" parent="Camera2D/Panel" node_paths=PackedStringArray("player")]
+layout_mode = 0
+offset_left = 41.8253
+offset_top = 28.4005
+offset_right = 291.825
+offset_bottom = 73.4005
+scale = Vector2(0.210317, 0.20926)
+text = "test"
+label_settings = SubResource("LabelSettings_2ln76")
+horizontal_alignment = 2
+script = ExtResource("4_bj0et")
+player = NodePath("../../..")
+
+[node name="InterestRatesShow" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 2.56074
+offset_top = 27.0795
+offset_right = 61.5607
+offset_bottom = 72.0795
+scale = Vector2(0.21602, 0.204224)
+text = "test"
+label_settings = SubResource("LabelSettings_nx4nl")
+script = ExtResource("4_3tanj")
+
+[node name="InterestRates" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 4.11402
+offset_top = 22.0526
+offset_right = 258.114
+offset_bottom = 67.0527
+scale = Vector2(0.211829, 0.194977)
+text = "Interested Rates"
+label_settings = SubResource("LabelSettings_655r6")
+
+[node name="Button" type="Button" parent="Camera2D/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 96.114
+offset_top = 23.0526
+offset_right = 172.114
+offset_bottom = 54.0526
+scale = Vector2(0.287722, 0.255867)
+text = "Stimulus"
+
+[node name="SadPeopleShow" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 3.41432
+offset_top = 45.5728
+offset_right = 62.415
+offset_bottom = 90.5728
+scale = Vector2(0.21698, 0.201781)
+text = "test"
+label_settings = SubResource("LabelSettings_l45e1")
+script = ExtResource("7_a7p3r")
+
+[node name="MedianWsage" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 59.4473
+offset_top = 8.2526
+offset_right = 273.447
+offset_bottom = 53.2526
+scale = Vector2(0.19312, 0.186585)
+text = "Median.Wage"
+label_settings = SubResource("LabelSettings_r055t")
+
+[node name="WageMedian" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 59.8857
+offset_top = 14.1052
+offset_right = 118.886
+offset_bottom = 59.1052
+scale = Vector2(0.197776, 0.199677)
+text = "test"
+label_settings = SubResource("LabelSettings_ajsp6")
+script = ExtResource("6_qco1f")
+
+[node name="PoppulationLabel" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 4.26789
+offset_top = 33.0238
+offset_right = 193.268
+offset_bottom = 78.0238
+scale = Vector2(0.216176, 0.216176)
+text = "poppulation"
+label_settings = SubResource("LabelSettings_nqcf8")
+
+[node name="PoppulationShow" type="Label" parent="Camera2D/Panel"]
+layout_mode = 0
+offset_left = 3.41431
+offset_top = 38.9681
+offset_right = 62.4143
+offset_bottom = 83.9681
+scale = Vector2(0.229165, 0.229165)
+text = "test"
+label_settings = SubResource("LabelSettings_nkjix")
+script = ExtResource("9_a5vrh")

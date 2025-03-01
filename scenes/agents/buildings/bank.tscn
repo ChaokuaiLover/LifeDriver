@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1bwxtl8irvsk"]
+
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_wqvaj"]
+[ext_resource type="Script" path="res://scripts/agent/building/Bank/bank.gd" id="2_gs6v1"]
+[ext_resource type="Script" path="res://scripts/agent/building/Bank/money_label.gd" id="3_c3418"]
+[ext_resource type="Script" path="res://scripts/agent/building/Bank/debt_label.gd" id="4_mxmap"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uei0o"]
+radius = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctwg2"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_58l2b"]
+font_size = 32
+
+[node name="bank" type="Sprite2D" groups=["Bank"]]
+texture = ExtResource("1_wqvaj")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("2_gs6v1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_uei0o")
+
+[node name="MoneyLabel" type="Label" parent="." node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -6.0
+offset_top = -22.0
+offset_right = 53.0
+offset_bottom = 23.0
+scale = Vector2(0.201984, 0.201984)
+text = "test"
+label_settings = SubResource("LabelSettings_ctwg2")
+script = ExtResource("3_c3418")
+unit = NodePath("..")
+
+[node name="DebtLabel" type="Label" parent="." node_paths=PackedStringArray("unit")]
+visible = false
+offset_left = -6.0
+offset_top = -17.0
+offset_right = 53.0
+offset_bottom = 28.0
+scale = Vector2(0.206199, 0.206199)
+text = "test"
+label_settings = SubResource("LabelSettings_58l2b")
+script = ExtResource("4_mxmap")
+unit = NodePath("..")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Lend" type="Node" parent="StateMachine"]
+
+[node name="InterestRateCalculate" type="Node" parent="StateMachine"]
