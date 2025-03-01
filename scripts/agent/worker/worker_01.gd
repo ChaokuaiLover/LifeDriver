@@ -52,7 +52,7 @@ var house: Node2D
 var work_state: String
 var buy_food_state: String
 
-#hello
+
 func aging(delta,current_age):
 	current_age -= delta
 	return current_age
