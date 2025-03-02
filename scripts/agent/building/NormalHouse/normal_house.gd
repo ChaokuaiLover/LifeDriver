@@ -22,9 +22,11 @@ func _ready():
 			body.buy_food_state = "idle"
 		)
 	$Area2D.body_exited.connect(func exit_house(body: Node2D):
-		body.inside_house = false
-		body.visible = true
+		if body == house_owner:
+			body.inside_house = false
+			body.visible = true
 		)
+		
 func _process(_delta: float):
 	if house_owner != null:
 		if house_owner.money < house_owner.food_price * house_owner.food_need and food_reserve < 100 - house_owner.energy:
