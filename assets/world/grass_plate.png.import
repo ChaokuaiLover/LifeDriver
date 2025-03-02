@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cndbxyfrvgijf"
-path="res://.godot/imported/market.png-7ece907e699ed2f36f1fd16fab7da57a.ctex"
+uid="uid://cranmvb30g6la"
+path="res://.godot/imported/grass_plate.png-d78a0b4c73e7e12b17540b1c7ebda577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/market.png"
-dest_files=["res://.godot/imported/market.png-7ece907e699ed2f36f1fd16fab7da57a.ctex"]
+source_file="res://assets/world/grass_plate.png"
+dest_files=["res://.godot/imported/grass_plate.png-d78a0b4c73e7e12b17540b1c7ebda577.ctex"]
 
 [params]
 

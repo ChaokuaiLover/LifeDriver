@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2nm62drds1xp"
-path="res://.godot/imported/shipping.png-a8e5febe259c4524b51674af24795618.ctex"
+uid="uid://bokkcdxjniro4"
+path="res://.godot/imported/rock_block.png-6ffa9cb68892cbe10a8b3b1e65f37a4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shipping.png"
-dest_files=["res://.godot/imported/shipping.png-a8e5febe259c4524b51674af24795618.ctex"]
+source_file="res://assets/world/rock_block.png"
+dest_files=["res://.godot/imported/rock_block.png-6ffa9cb68892cbe10a8b3b1e65f37a4f.ctex"]
 
 [params]
 

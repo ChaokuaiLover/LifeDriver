@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ynqkx3dld38"
-path="res://.godot/imported/ruler.png-304769aca12c8764e25de6255833f8d9.ctex"
+uid="uid://b2nm62drds1xp"
+path="res://.godot/imported/shipping.png-37e0f6df9d38b29f30e4ed2ace1948b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ruler.png"
-dest_files=["res://.godot/imported/ruler.png-304769aca12c8764e25de6255833f8d9.ctex"]
+source_file="res://assets/Agents/shipping.png"
+dest_files=["res://.godot/imported/shipping.png-37e0f6df9d38b29f30e4ed2ace1948b2.ctex"]
 
 [params]
 
