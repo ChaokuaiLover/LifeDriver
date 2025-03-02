@@ -23,7 +23,7 @@ func Physics_Update(delta: float):
 	if target:
 		worker.current_target = target
 		direction = target.global_position - worker.global_position
-		worker.velocity = direction.normalized() * 2000.0 * delta
+		worker.velocity = direction.normalized() * worker.move_speed * delta
 		
 	if worker.energy <= 80:
 		worker.queue_free()
