@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://eg1gj4vdl7ib"]
 
-[ext_resource type="Texture2D" uid="uid://cndbxyfrvgijf" path="res://assets/market.png" id="1_0hen8"]
+[ext_resource type="Texture2D" uid="uid://cndbxyfrvgijf" path="res://assets/Agents/market.png" id="1_0hen8"]
 [ext_resource type="Script" path="res://scripts/agent/building/Market/market.gd" id="2_lgnsj"]
 [ext_resource type="Script" path="res://scripts/agent/building/Farm/money_label.gd" id="3_5li7k"]
 [ext_resource type="Script" path="res://scripts/agent/building/Market/state_machine.gd" id="3_odpf7"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpaxdi1g63els"]
 
-[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_nel3l"]
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_nel3l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_woic0"]
 radius = 4.0

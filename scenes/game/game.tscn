@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://lgueoblclrqk"]
 
-[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_irmry"]
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_irmry"]
 [ext_resource type="PackedScene" uid="uid://dc0c4xti7xuk5" path="res://scenes/agents/worker/worker.tscn" id="2_jkuqy"]
 [ext_resource type="PackedScene" uid="uid://b1bwxtl8irvsk" path="res://scenes/agents/buildings/bank.tscn" id="3_e134i"]
 [ext_resource type="PackedScene" uid="uid://eg1gj4vdl7ib" path="res://scenes/agents/buildings/market.tscn" id="3_skhaj"]

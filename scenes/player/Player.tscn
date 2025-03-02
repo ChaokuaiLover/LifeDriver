@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/agent/Player/Player.gd" id="1_pjw63"]
 [ext_resource type="Script" path="res://scripts/agent/Player/panel.gd" id="3_3wkd1"]
-[ext_resource type="Script" path="res://scripts/agent/interest_rates.gd" id="4_3tanj"]
+[ext_resource type="Script" path="res://scripts/agent/Player/interest_rates.gd" id="4_3tanj"]
 [ext_resource type="Script" path="res://scripts/agent/Player/time_show.gd" id="4_bheox"]
 [ext_resource type="Script" path="res://scripts/agent/Player/total_money_show.gd" id="4_bj0et"]
 [ext_resource type="Script" path="res://scripts/agent/Player/food_price_mean.gd" id="6_qco1f"]

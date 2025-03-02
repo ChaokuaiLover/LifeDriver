@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://rd83y2dtu8us"]
 
-[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_vhxxt"]
+[ext_resource type="Texture2D" uid="uid://cxowbsx54q6fe" path="res://assets/Agents/barn.png" id="1_i30wf"]
 [ext_resource type="Script" path="res://scripts/agent/building/Farm/farm.gd" id="2_o8ud1"]
 [ext_resource type="Script" path="res://scripts/agent/building/Farm/state_machine.gd" id="3_sv4mr"]
 [ext_resource type="Script" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_x2qtd"]
@@ -29,8 +29,7 @@ font_size = 32
 font_size = 32
 
 [node name="farm" type="Sprite2D" groups=["AllUnit", "Farm", "WorkBuilding", "WorkBuildingList"]]
-texture = ExtResource("1_vhxxt")
-region_enabled = true
+texture = ExtResource("1_i30wf")
 region_rect = Rect2(16, 0, 16, 16)
 script = ExtResource("2_o8ud1")
 

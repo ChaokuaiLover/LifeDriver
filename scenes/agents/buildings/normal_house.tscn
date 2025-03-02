@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c4tbct4ne60tl"]
+[gd_scene load_steps=13 format=3 uid="uid://c4tbct4ne60tl"]
 
-[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/LD_tile_set.png" id="1_2lxto"]
+[ext_resource type="Texture2D" uid="uid://c770hu47vi8jp" path="res://assets/Agents/basic_house.png" id="1_0r7od"]
+[ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_2lxto"]
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/normal_house.gd" id="2_68gcr"]
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/owner_name_label.gd" id="3_edqu2"]
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/food_reserve_label.gd" id="4_iy5b8"]
@@ -23,8 +24,7 @@ font_size = 32
 font_size = 32
 
 [node name="normalHouse" type="Sprite2D" groups=["House", "NormalHouse"]]
-texture = ExtResource("1_2lxto")
-region_enabled = true
+texture = ExtResource("1_0r7od")
 region_rect = Rect2(32, 0, 16, 16)
 script = ExtResource("2_68gcr")
 
@@ -33,6 +33,7 @@ unique_name_in_owner = true
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_ow8ea")
 
 [node name="OwnerNameLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
