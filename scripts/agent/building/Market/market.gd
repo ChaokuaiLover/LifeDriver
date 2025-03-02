@@ -123,7 +123,7 @@ func _process(delta: float):
 					
 			else: _adjust_price(1)
 					
-		margin = float(int(food_stock / 1428) + 10) / 100
+		margin = float(roundf(food_stock / 1428.0) + 10.0) / 100.0
 		price_offer = int(float(price) * (1.0 - margin))
 		print("margin: ", margin * 100 , "%")
 		data_calculate_cycle = data_calculate_cycle_start
