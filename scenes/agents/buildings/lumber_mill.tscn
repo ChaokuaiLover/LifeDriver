@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmsv3usbuvuf7"]
+[gd_scene load_steps=4 format=3 uid="uid://cmsv3usbuvuf7"]
 
 [ext_resource type="Texture2D" uid="uid://bbw4ig521v8jv" path="res://assets/Agents/lumber_mill.png" id="1_50jf4"]
+[ext_resource type="Script" path="res://scripts/agent/lumber_mill/lumber_mill.gd" id="2_idsi5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1clpq"]
 radius = 4.0
 
 [node name="lumber_mill" type="Sprite2D"]
 texture = ExtResource("1_50jf4")
+script = ExtResource("2_idsi5")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 4
