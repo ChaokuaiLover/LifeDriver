@@ -9,6 +9,7 @@ var rest_time_start: float = 3.0
 var rest_time: float
 
 func Enter():
+	worker.velocity = Vector2(0,0) * 0
 	rest_time = rest_time_start
 	worker.energy_drain_index = 1.0
 
@@ -39,5 +40,3 @@ func Update(delta: float):
 	elif worker.energy > 70 and !worker.retire and worker.mood == "fresh":
 		Transitioned.emit(self, "Work")
 		
-func Physics_Update(_delta: float):
-	worker.velocity = Vector2(0,0) * 0

@@ -4,6 +4,7 @@ class_name WorkerStoreFood
 var all_target: Array
 
 func Enter():
+	worker.velocity = Vector2(0,0) * 0
 	worker.house.food_reserve += worker.food
 	worker.food -= worker.food
 	
@@ -14,6 +15,3 @@ func Update(_delta: float):
 		worker.food -= worker.food
 	Transitioned.emit(self, "Rest")
 	
-
-func Physics_Update(_delta: float):
-	worker.velocity = Vector2(0,0) * 0

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name Worker
-var move_speed: float = 2000.0
+var move_speed: float = 1800.0
 var speed_pixel_per_second: float = move_speed/ 30.0  #pixel per second
 var energy: float
 var energy_start : float = 100.0

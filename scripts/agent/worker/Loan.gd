@@ -8,8 +8,5 @@ func Enter():
 	worker.debt += int(need_money * float(1 + worker.interest_rates))
 	
 func Update(_delta: float):
-	pass
-
-func Physics_Update(_delta: float):
 	if worker.money >= worker.food_need * worker.food_price:
 		Transitioned.emit(self, "Rest")
