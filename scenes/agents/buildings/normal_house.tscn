@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/owner_name_label.gd" id="3_edqu2"]
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/food_reserve_label.gd" id="4_iy5b8"]
 [ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/money_label.gd" id="5_ak5ko"]
-[ext_resource type="Script" path="res://scenes/agents/buildings/debt_lable.gd" id="6_7l8pj"]
+[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/debt_lable.gd" id="6_7l8pj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow8ea"]
 radius = 4.0
