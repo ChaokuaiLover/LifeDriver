@@ -10,33 +10,38 @@ func _find_median(array):
 	else:
 		median_value =  target_array[int(num / 2)]
 	return median_value
+	
 
 func debt_compounding(current_debt,current_interest_rates):
 	current_debt = float(current_debt) * float(current_interest_rates + 1.0)
 	return int(round(current_debt))
 	
+	
+
 func produce_food(unit,worker,wage,multiplier):
 	unit.money -= multiplier * wage
 	worker.money += multiplier * wage
 	unit.food_stock += roundi((float(multiplier) * 2.0))
 	worker.energy -= float(multiplier)
 	
+
 func profit_calculation(income,expense):
-	var profit: float
+	var profit_rate: float
 	if expense > 0:
 		#profit = income - expense
-		profit = float(income - expense) / float(expense) * 100
-		profit = snapped(profit,0.01)
-	return profit
+		profit_rate = float(income - expense) / float(expense) * 100
+		profit_rate = snapped(profit_rate,0.01)
+	return profit_rate
 	
+
 func data_growth_calculation(data_statement):
 	var data_growth: float
 	if data_statement[1] > 0:
 		data_growth = float(data_statement[0] - float(data_statement[1])) / float(data_statement[1]) * 100
 		data_growth = snapped(data_growth,0.01)
 	return data_growth
-		
-		
+	
+
 func find_best_length_target_buy(unit,target_array):
 	var direction
 	var all_target_and_length: Dictionary = {}
@@ -83,6 +88,7 @@ func find_best_target_buy(unit,target_array,speed,time_value):
 	best_target = all_target_price_and_time_value.find_key(all_value_sum.min())
 	return best_target
 	
+	
 
 func find_best_target_work(unit,target_array,speed,time_value):
 	var all_target_price_and_time_value: Dictionary = {}
@@ -101,6 +107,7 @@ func find_best_target_work(unit,target_array,speed,time_value):
 				all_target_price_and_time_value[target] = value_sum
 	best_target = all_target_price_and_time_value.find_key(all_value_sum.max())
 	return best_target
+	
 
 func find_best_target_sell(unit,target_array,speed,time_value):
 	var all_target_price_and_time_value: Dictionary = {}
@@ -119,3 +126,29 @@ func find_best_target_sell(unit,target_array,speed,time_value):
 				all_target_price_and_time_value[target] = value_sum
 	best_target = all_target_price_and_time_value.find_key(all_value_sum.max())
 	return best_target
+
+func _financial(agent):
+	agent.profit = Function.profit_calculation(agent.income,agent.expense)
+	agent.income_statement.push_front(agent.income)
+	agent.expenditure_statement.push_front(agent.expense)
+	agent.sales_statement.push_front(agent.sales)
+	agent.production_statement.push_front(agent.production)
+	agent.profit_statement.push_front(agent.profit)
+	agent.income_growth_statement.push_front(Function.data_growth_calculation(agent.income_statement))
+	agent.expenditure_growth_statement.push_front(Function.data_growth_calculation(agent.expenditure_statement))
+	agent.production_growth_statement.push_front(Function.data_growth_calculation(agent.production_statement))
+	
+	agent.income_statement.resize(5)
+	agent.expenditure_statement.resize(5)
+	agent.profit_statement.resize(5)
+	agent.sales_statement.resize(5)
+	agent.production_statement.resize(5)
+	agent.income_growth_statement.resize(5)
+	agent.expenditure_growth_statement.resize(5)
+	agent.production_growth_statement.resize(5)
+	
+	agent.income = 0
+	agent.expense = 0
+	agent.sales = 0
+	agent.production = 0
+	

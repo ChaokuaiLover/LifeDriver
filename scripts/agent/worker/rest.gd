@@ -26,15 +26,14 @@ func Update(delta: float):
 	if rest_time <= 0:
 		worker.mood = "fresh"
 		rest_time = rest_time_start
-		
-	if worker.buy_target != null:
+	if worker.buy_target:
 		is_able_to_buy_food = worker.buy_target.sell_status and worker.money >= worker.food_price * worker.food_need
 		is_need_to_buy_food = worker.house.food_reserve < worker.house.food_reserve_limit * 0.8
 		
-	if worker.buy_target != null and is_need_to_buy_food and is_able_to_buy_food and worker.mood == "fresh":
+	if is_need_to_buy_food and is_able_to_buy_food and worker.mood == "fresh":
 		Transitioned.emit(self, "BuyFood")
 		
-	elif worker.buy_target != null and is_need_to_buy_food and worker.money < worker.food_price * worker.food_need and worker.debt < 60.0 * worker.average_income and worker.mood == "fresh":
+	elif is_need_to_buy_food and worker.money < worker.food_price * worker.food_need and worker.debt < 60.0 * worker.average_income and worker.mood == "fresh":
 		Transitioned.emit(self, "Loan")
 		
 	elif worker.energy > 70 and !worker.retire and worker.mood == "fresh":
