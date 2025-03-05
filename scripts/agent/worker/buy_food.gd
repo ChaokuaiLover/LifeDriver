@@ -24,7 +24,7 @@ func Update(_delta: float):
 		#Transitioned.emit(self, "Loan")
 
 func Physics_Update(delta: float):
-	if target != null and worker.buy_food_state == "going":
+	if target and worker.buy_food_state == "going":
 		worker.current_target = target
 		direction = target.global_position - worker.global_position
 		worker.velocity = direction.normalized() * worker.move_speed * delta

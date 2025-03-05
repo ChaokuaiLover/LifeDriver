@@ -33,7 +33,7 @@ func Update(delta: float):
 	if is_need_to_buy_food and is_able_to_buy_food and worker.mood == "fresh":
 		Transitioned.emit(self, "BuyFood")
 		
-	elif is_need_to_buy_food and worker.money < worker.food_price * worker.food_need and worker.debt < 60.0 * worker.average_income and worker.mood == "fresh":
+	elif is_need_to_buy_food and false and worker.money < worker.food_price * worker.food_need and worker.debt < 60.0 * worker.average_income and worker.mood == "fresh":
 		Transitioned.emit(self, "Loan")
 		
 	elif worker.energy > 70 and !worker.retire and worker.mood == "fresh":

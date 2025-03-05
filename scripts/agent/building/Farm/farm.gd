@@ -51,41 +51,15 @@ func _adjust_wage(plan):
 	wage_offer = roundi(float(wage_offer * float(margin ** plan) ))
 	wage_plan = plan
 	
-func _financial():
-	#profit = Function.profit_calculation(income,expense)
-	#income_statement.push_front(income)
-	#expenditure_statement.push_front(expense)
-	#sales_statement.push_front(sales)
-	production_statement.push_front(production)
-	#profit_statement.push_front(profit)
-	#income_growth_statement.push_front(Function.data_growth_calculation(income_statement))
-	#expenditure_growth_statement.push_front(Function.data_growth_calculation(expenditure_statement))
-	production_growth_statement.push_front(Function.data_growth_calculation(production_statement))
-	
-	#income_statement.resize(5)
-	#expenditure_statement.resize(5)
-	#profit_statement.resize(5)
-	#sales_statement.resize(5)
-	production_statement.resize(5)
-	#income_growth_statement.resize(5)
-	#expenditure_growth_statement.resize(5)
-	production_growth_statement.resize(5)
-	
-	#income = 0
-	#expense = 0
-	#sales = 0
-	production = 0
-	
-
 func _ready():
 	data_calculate_cycle = data_calculate_cycle_start
-	#income_statement.resize(5)
-	#expenditure_statement.resize(5)
-	#profit_statement.resize(5)
-	#sales_statement.resize(5)
+	income_statement.resize(5)
+	expenditure_statement.resize(5)
+	profit_statement.resize(5)
+	sales_statement.resize(5)
 	production_statement.resize(5)
-	#income_growth_statement.resize(5)
-	#expenditure_growth_statement.resize(5)
+	income_growth_statement.resize(5)
+	expenditure_growth_statement.resize(5)
 	production_growth_statement.resize(5)
 	
 	$Area2D.body_entered.connect(func producing_food(body: Node2D):
@@ -131,7 +105,7 @@ func _process(delta: float):
 	data_calculate_cycle -= delta
 	
 	if data_calculate_cycle <= 0:
-		_financial()
+		Function._financial(self,1,1,1,1,1)
 		
 		if  production_growth_statement.size() >= 2:
 			if production_statement[0] == 0 and profitable:

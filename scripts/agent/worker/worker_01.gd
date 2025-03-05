@@ -1,11 +1,11 @@
 extends CharacterBody2D
 class_name Worker
-var move_speed: float = 1800.0
+const  move_speed: float = 1800.0
+const  hungry_time: float = 100.0 #seccond
+const  energy_start : float = 100.0
 var speed_pixel_per_second: float = move_speed/ 30.0  #pixel per second
 var energy: float
-var energy_start : float = 100.0
-var energy_drain_index: float = 1.0
-var hungry_time: float = 100.0 #seccond
+var  energy_drain_index: float = 1.0
 var energy_drain_rate: float = energy_start / hungry_time
 var age: float = 600.0 #second
 
@@ -111,13 +111,12 @@ func _process(delta: float):
 	all_buy_target = get_tree().get_nodes_in_group("FoodMarket")
 	buy_target = Function.find_best_target_buy(house,all_buy_target,speed_pixel_per_second,time_value)
 	work_target = Function.find_best_target_work(house,all_work_target,speed_pixel_per_second,time_value)
-		
-	if buy_target != null:
+	if buy_target:
 		food_price = buy_target.price
 	debt_calculate_cycle -= delta
 	
 	#Retire condition
-	if money - debt >= int(age * float(food_price) * 1.2) or house.food_reserve >= age:
+	if (money - debt >= int(age * float(food_price) * 1.2) or house.food_reserve >= age) and buy_target:
 		retire = true
 	else:
 		retire = false

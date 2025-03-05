@@ -21,6 +21,7 @@ func _ready():
 			body.work_state = "idle"
 			body.buy_food_state = "idle"
 		)
+		
 	$Area2D.body_exited.connect(func exit_house(body: Node2D):
 		if body == house_owner:
 			body.inside_house = false

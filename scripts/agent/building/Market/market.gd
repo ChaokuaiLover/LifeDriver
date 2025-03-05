@@ -43,35 +43,6 @@ func _adjust_price(plan):
 	price_plan = plan
 
 
-func _financial():
-	profit = Function.profit_calculation(income,expense)
-	income_statement.push_front(income)
-	#expenditure_statement.push_front(expense)
-	#sales_statement.push_front(sales)
-	productivity_statement.push_front(productivity)
-	profit_statement.push_front(profit)
-	income_growth_statement.push_front(Function.data_growth_calculation(income_statement))
-	#expenditure_growth_statement.push_front(Function.data_growth_calculation(expenditure_statement))
-	
-	
-	income_statement.resize(5)
-	#expenditure_statement.resize(5)
-	#sales_statement.resize(5)
-	profit_statement.resize(5)
-	income_growth_statement.resize(5)
-	#expenditure_growth_statement.resize(5)
-	productivity_statement.resize(11)
-
-	if true:
-		print("**",name)
-		print(income_statement)
-		print(income_growth_statement)
-		print(productivity_statement,Function._find_median(productivity_statement))
-	income = 0
-	expense = 0
-	sales = 0
-	productivity = 0
-	
 func _ready():
 	data_calculate_cycle = data_calculate_cycle_start
 	
@@ -105,7 +76,7 @@ func _process(delta: float):
 	data_calculate_cycle -= delta
 	
 	if data_calculate_cycle <= 0:
-		_financial()
+		Function._financial(self,1,1,1,1,0)
 		if  income_growth_statement.size() >= 2:
 			if income_growth_statement[0] <= price_change:
 				

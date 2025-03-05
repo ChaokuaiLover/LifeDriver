@@ -80,7 +80,6 @@ func find_best_target_buy(unit,target_array,speed,time_value):
 	for target in target_array:
 		if target != null:
 			if target.sell_status == true and unit != null:
-				all_target_price_and_time_value[target] = target.price
 				direction = target.global_position - unit.global_position
 				value_sum =  float(target.price_offer) + ((float(direction.length()) / float(speed)) * float(time_value + 1.0))
 				all_value_sum.push_back(value_sum)
@@ -100,7 +99,6 @@ func find_best_target_work(unit,target_array,speed,time_value):
 	for target in target_array:
 		if unit != null and target != null:
 			if target.wage_offer > 0 and target.hire_status:
-				all_target_price_and_time_value[target] = target.wage_offer
 				direction = target.global_position - unit.global_position
 				value_sum = float(target.wage_offer * target.food_multiplier) - (float(direction.length()) / float(speed)) * float(time_value + 1.0)
 				all_value_sum.push_back(value_sum)
@@ -127,28 +125,36 @@ func find_best_target_sell(unit,target_array,speed,time_value):
 	best_target = all_target_price_and_time_value.find_key(all_value_sum.max())
 	return best_target
 
-func _financial(agent):
-	agent.profit = Function.profit_calculation(agent.income,agent.expense)
-	agent.income_statement.push_front(agent.income)
-	agent.expenditure_statement.push_front(agent.expense)
-	agent.sales_statement.push_front(agent.sales)
-	agent.production_statement.push_front(agent.production)
-	agent.profit_statement.push_front(agent.profit)
-	agent.income_growth_statement.push_front(Function.data_growth_calculation(agent.income_statement))
-	agent.expenditure_growth_statement.push_front(Function.data_growth_calculation(agent.expenditure_statement))
-	agent.production_growth_statement.push_front(Function.data_growth_calculation(agent.production_statement))
+
+func _financial(agent,income,profit,expense,sales,production):
+	if profit == 1:
+		agent.profit = Function.profit_calculation(agent.income,agent.expense)
+		agent.profit_statement.push_front(agent.profit)
+		agent.profit_statement.resize(5)
+
+	if income == 1:
+		agent.income_statement.push_front(agent.income)
+		agent.income_growth_statement.push_front(Function.data_growth_calculation(agent.income_statement))
+		agent.income_statement.resize(5)
+		agent.income_growth_statement.resize(5)
+		agent.income = 0
+		
+	if expense == 1:
+		agent.expenditure_statement.push_front(agent.expense)
+		agent.expenditure_growth_statement.push_front(Function.data_growth_calculation(agent.expenditure_statement))
+		agent.expenditure_statement.resize(5)
+		agent.expenditure_growth_statement.resize(5)
+		agent.expense = 0
+		
+	if sales == 1:
+		agent.sales_statement.push_front(agent.sales)
+		agent.sales_statement.resize(5)
+		agent.sales = 0
 	
-	agent.income_statement.resize(5)
-	agent.expenditure_statement.resize(5)
-	agent.profit_statement.resize(5)
-	agent.sales_statement.resize(5)
-	agent.production_statement.resize(5)
-	agent.income_growth_statement.resize(5)
-	agent.expenditure_growth_statement.resize(5)
-	agent.production_growth_statement.resize(5)
-	
-	agent.income = 0
-	agent.expense = 0
-	agent.sales = 0
-	agent.production = 0
+	if production == 1:
+		agent.production_statement.push_front(agent.production)
+		agent.production_growth_statement.push_front(Function.data_growth_calculation(agent.production_statement))
+		agent.production_statement.resize(5)
+		agent.production_growth_statement.resize(5)
+		agent.production = 0
 	
