@@ -1,1 +1,1 @@
-This economy simulation game have
+Economy simulation game.
