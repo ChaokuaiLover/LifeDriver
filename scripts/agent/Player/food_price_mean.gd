@@ -10,9 +10,9 @@ func price_average_calculate(unit_array):
 	wage_average = int(float(total_wage) / unit_array.size())
 	return wage_average
 func _ready():
-	all_unit = get_tree().get_nodes_in_group("Farn")
+	all_unit = get_tree().get_nodes_in_group("WorkBuilding")
 	
 
 func  _process(_delta: float):
-	all_unit = get_tree().get_nodes_in_group("Farm")
+	all_unit = get_tree().get_nodes_in_group("WorkBuilding")
 	self.text = str(price_average_calculate(all_unit))

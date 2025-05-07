@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://eg1gj4vdl7ib"]
 
 [ext_resource type="Texture2D" uid="uid://cndbxyfrvgijf" path="res://assets/Agents/market.png" id="1_0hen8"]
-[ext_resource type="Script" path="res://scripts/agent/building/Market/market.gd" id="2_lgnsj"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/money_label.gd" id="3_5li7k"]
-[ext_resource type="Script" path="res://scripts/agent/building/Market/state_machine.gd" id="3_odpf7"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/price_label.gd" id="4_6sq4k"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/name_label.gd" id="5_11eng"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_lw64d"]
+[ext_resource type="Script" uid="uid://b21safs6yhw1b" path="res://scripts/agent/building/Market/market.gd" id="2_lgnsj"]
+[ext_resource type="Script" uid="uid://c7ulm27f5rd8e" path="res://scripts/agent/building/Farm/money_label.gd" id="3_5li7k"]
+[ext_resource type="Script" uid="uid://cyfs83inrug27" path="res://scripts/agent/building/Market/state_machine.gd" id="3_odpf7"]
+[ext_resource type="Script" uid="uid://ncnjvwk5bgdk" path="res://scripts/agent/building/Farm/price_label.gd" id="4_6sq4k"]
+[ext_resource type="Script" uid="uid://dv4fao68ulr3v" path="res://scripts/agent/building/Farm/name_label.gd" id="5_11eng"]
+[ext_resource type="Script" uid="uid://0vm6s5rx7v7m" path="res://scripts/agent/building/Market/food_stock_label.gd" id="6_l41r2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_545c7"]
-radius = 4.0
+radius = 7.07107
 
 [sub_resource type="LabelSettings" id="LabelSettings_ucvmd"]
 font_size = 32
@@ -23,7 +23,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_mqsv7"]
 font_size = 32
 
-[node name="market" type="Sprite2D" groups=["AllUnit", "FoodMarket", "Market"]]
+[node name="food_market" type="Sprite2D" groups=["AllUnit", "FoodMarket", "Market"]]
 texture = ExtResource("1_0hen8")
 script = ExtResource("2_lgnsj")
 
@@ -79,7 +79,7 @@ offset_bottom = 23.0
 scale = Vector2(0.23791, 0.23791)
 text = "test"
 label_settings = SubResource("LabelSettings_mqsv7")
-script = ExtResource("6_lw64d")
+script = ExtResource("6_l41r2")
 unit = NodePath("../..")
 
 [node name="StateMachine" type="Node" parent="."]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1bwxtl8irvsk"]
 
 [ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_wqvaj"]
-[ext_resource type="Script" path="res://scripts/agent/building/Bank/bank.gd" id="2_gs6v1"]
-[ext_resource type="Script" path="res://scripts/agent/building/Bank/money_label.gd" id="3_c3418"]
-[ext_resource type="Script" path="res://scripts/agent/building/Bank/debt_label.gd" id="4_mxmap"]
+[ext_resource type="Script" uid="uid://ci35wny1eib3s" path="res://scripts/agent/building/Bank/bank.gd" id="2_gs6v1"]
+[ext_resource type="Script" uid="uid://bg03ahbf8s3h" path="res://scripts/agent/building/Bank/money_label.gd" id="3_c3418"]
+[ext_resource type="Script" uid="uid://hnatv38h6ggx" path="res://scripts/agent/building/Bank/debt_label.gd" id="4_mxmap"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uei0o"]
 radius = 4.0

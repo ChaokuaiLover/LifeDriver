@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmsv3usbuvuf7"]
+[gd_scene load_steps=8 format=3 uid="uid://cmsv3usbuvuf7"]
 
 [ext_resource type="Texture2D" uid="uid://bbw4ig521v8jv" path="res://assets/Agents/lumber_mill.png" id="1_50jf4"]
-[ext_resource type="Script" path="res://scripts/agent/lumber_mill/lumber_mill.gd" id="2_idsi5"]
+[ext_resource type="Script" uid="uid://b55m8svqi5tpx" path="res://scripts/agent/lumber_mill/lumber_mill.gd" id="2_idsi5"]
+[ext_resource type="Script" uid="uid://bhsont5jan6jv" path="res://scripts/agent/building/WoodMarket/money_label.gd" id="3_8qbxh"]
+[ext_resource type="Script" uid="uid://ucx1wswqcyfg" path="res://scripts/agent/building/Farm/wage_label.gd" id="4_gtyds"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1clpq"]
 radius = 4.0
 
-[node name="lumber_mill" type="Sprite2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_gtyds"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmjpn"]
+font_size = 32
+
+[node name="lumber_mill" type="Sprite2D" groups=["WorkBuilding"]]
 texture = ExtResource("1_50jf4")
 script = ExtResource("2_idsi5")
 
@@ -15,3 +23,26 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_1clpq")
+
+[node name="Money" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+offset_left = -7.0
+offset_top = -17.0
+offset_right = 52.0
+offset_bottom = 28.0
+scale = Vector2(0.233566, 0.246153)
+text = "test"
+label_settings = SubResource("LabelSettings_gtyds")
+script = ExtResource("3_8qbxh")
+unit = NodePath("../..")
+
+[node name="WageLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -7.0
+offset_top = -23.0
+offset_right = 52.0
+offset_bottom = 22.0
+scale = Vector2(0.245074, 0.245074)
+text = "test"
+label_settings = SubResource("LabelSettings_fmjpn")
+script = ExtResource("4_gtyds")
+unit = NodePath("../..")

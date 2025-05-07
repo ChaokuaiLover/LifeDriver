@@ -1,17 +1,17 @@
 [gd_scene load_steps=16 format=3 uid="uid://rd83y2dtu8us"]
 
 [ext_resource type="Texture2D" uid="uid://cxowbsx54q6fe" path="res://assets/Agents/barn.png" id="1_i30wf"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/farm.gd" id="2_o8ud1"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/state_machine.gd" id="3_sv4mr"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_x2qtd"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/money_label.gd" id="7_qpxiq"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/wage_label.gd" id="7_t0hyy"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/name_label.gd" id="8_1veph"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/debt_label.gd" id="8_g3buh"]
-[ext_resource type="Script" path="res://scripts/agent/building/Farm/loan.gd" id="9_ntlv2"]
+[ext_resource type="Script" uid="uid://noqn77jcnsbl" path="res://scripts/agent/building/Farm/farm.gd" id="2_o8ud1"]
+[ext_resource type="Script" uid="uid://dsei3tdg8luc1" path="res://scripts/agent/building/Farm/state_machine.gd" id="3_sv4mr"]
+[ext_resource type="Script" uid="uid://5ph1gfimptis" path="res://scripts/agent/building/Farm/food_stock_label.gd" id="6_x2qtd"]
+[ext_resource type="Script" uid="uid://c7ulm27f5rd8e" path="res://scripts/agent/building/Farm/money_label.gd" id="7_qpxiq"]
+[ext_resource type="Script" uid="uid://ucx1wswqcyfg" path="res://scripts/agent/building/Farm/wage_label.gd" id="7_t0hyy"]
+[ext_resource type="Script" uid="uid://dv4fao68ulr3v" path="res://scripts/agent/building/Farm/name_label.gd" id="8_1veph"]
+[ext_resource type="Script" uid="uid://ckor4uqmwku8q" path="res://scripts/agent/building/Farm/debt_label.gd" id="8_g3buh"]
+[ext_resource type="Script" uid="uid://trksgl24orxg" path="res://scripts/agent/building/Farm/loan.gd" id="9_ntlv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlf8a"]
-radius = 4.0
+radius = 7.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_p81pv"]
 font_size = 32

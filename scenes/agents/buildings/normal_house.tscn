@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4tbct4ne60tl"]
+[gd_scene load_steps=15 format=3 uid="uid://c4tbct4ne60tl"]
 
 [ext_resource type="Texture2D" uid="uid://c770hu47vi8jp" path="res://assets/Agents/basic_house.png" id="1_0r7od"]
 [ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_2lxto"]
-[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/normal_house.gd" id="2_68gcr"]
-[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/owner_name_label.gd" id="3_edqu2"]
-[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/food_reserve_label.gd" id="4_iy5b8"]
-[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/money_label.gd" id="5_ak5ko"]
-[ext_resource type="Script" path="res://scripts/agent/building/NormalHouse/debt_lable.gd" id="6_7l8pj"]
+[ext_resource type="Script" uid="uid://6b8jtm6svrjx" path="res://scripts/agent/building/NormalHouse/normal_house.gd" id="2_68gcr"]
+[ext_resource type="Script" uid="uid://cgy50ejw31t1t" path="res://scripts/agent/building/NormalHouse/owner_name_label.gd" id="3_edqu2"]
+[ext_resource type="Script" uid="uid://i28n73r4cqmv" path="res://scripts/agent/building/NormalHouse/food_reserve_label.gd" id="4_iy5b8"]
+[ext_resource type="Script" uid="uid://cshhuh07j3fw1" path="res://scripts/agent/building/NormalHouse/money_label.gd" id="5_ak5ko"]
+[ext_resource type="Script" uid="uid://1jh3lfyjkysm" path="res://scripts/agent/building/NormalHouse/debt_lable.gd" id="6_7l8pj"]
+[ext_resource type="Script" uid="uid://batdyads6gf7p" path="res://scripts/agent/building/NormalHouse/food_produce_multiplier.gd" id="7_drvne"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow8ea"]
-radius = 4.0
+radius = 7.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2k0y"]
 font_size = 32
@@ -23,7 +24,11 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_kbjsu"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_ugrps"]
+font_size = 32
+
 [node name="normalHouse" type="Sprite2D" groups=["House", "NormalHouse"]]
+z_index = 1
 texture = ExtResource("1_0r7od")
 region_rect = Rect2(32, 0, 16, 16)
 script = ExtResource("2_68gcr")
@@ -37,7 +42,7 @@ shape = SubResource("CircleShape2D_ow8ea")
 
 [node name="OwnerNameLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
 visible = false
-z_index = 2
+z_index = 10
 offset_left = -6.0
 offset_top = -18.0
 offset_right = 53.0
@@ -50,7 +55,7 @@ unit = NodePath("../..")
 
 [node name="FoodReserveLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
 visible = false
-z_index = 2
+z_index = 10
 offset_left = -6.0
 offset_top = -23.0
 offset_right = 53.0
@@ -62,27 +67,41 @@ script = ExtResource("4_iy5b8")
 unit = NodePath("../..")
 
 [node name="MoneyLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
-z_index = 2
+z_index = 10
 offset_left = -6.0
-offset_top = -18.0
+offset_top = -14.0
 offset_right = 53.0
-offset_bottom = 27.0
+offset_bottom = 31.0
 scale = Vector2(0.217515, 0.217515)
 text = "test"
 label_settings = SubResource("LabelSettings_12cko")
+text_direction = 2
 script = ExtResource("5_ak5ko")
 unit = NodePath("../..")
 
 [node name="DebtLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
-visible = false
+z_index = 10
 offset_left = -6.0
-offset_top = -13.0
+offset_top = -20.0
 offset_right = 53.0
-offset_bottom = 32.0
+offset_bottom = 25.0
 scale = Vector2(0.220053, 0.220053)
 text = "test"
 label_settings = SubResource("LabelSettings_kbjsu")
 script = ExtResource("6_7l8pj")
+unit = NodePath("../..")
+
+[node name="FoodProdMulLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 10
+offset_left = -6.0
+offset_top = -25.0
+offset_right = 53.0
+offset_bottom = 20.0
+scale = Vector2(0.207877, 0.207877)
+text = "test"
+label_settings = SubResource("LabelSettings_ugrps")
+text_direction = 2
+script = ExtResource("7_drvne")
 unit = NodePath("../..")
 
 [node name="SadFace" type="Sprite2D" parent="."]

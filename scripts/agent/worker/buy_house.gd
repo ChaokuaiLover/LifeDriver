@@ -25,7 +25,7 @@ func Physics_Update(delta: float):
 		direction = target.global_position - worker.global_position
 		worker.velocity = direction.normalized() * worker.move_speed * delta
 		
-	if worker.energy <= 80:
+	if worker.energy <= 30:
 		worker.queue_free()
 	#elif worker.money <= worker.food_price * worker.food_need:
 		#Transitioned.emit(self, "Loan")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cd35ii6v60vej"]
+
+[ext_resource type="Texture2D" uid="uid://docwklamu1pbh" path="res://assets/Agents/wood_market.png" id="1_emgi3"]
+[ext_resource type="Script" uid="uid://cn2bgp6gonvbb" path="res://scripts/agent/building/WoodMarket/wood_market.gd" id="2_6hpq8"]
+[ext_resource type="Script" uid="uid://bhsont5jan6jv" path="res://scripts/agent/building/WoodMarket/money_label.gd" id="3_l10hs"]
+[ext_resource type="Script" uid="uid://ncnjvwk5bgdk" path="res://scripts/agent/building/Farm/price_label.gd" id="4_i7x45"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l10hs"]
+radius = 7.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_l10hs"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_eatwr"]
+font_size = 32
+
+[node name="WoodMarket" type="Sprite2D" groups=["WoodMarket"]]
+texture = ExtResource("1_emgi3")
+script = ExtResource("2_6hpq8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_l10hs")
+
+[node name="Money" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+offset_left = -8.0
+offset_top = -18.0
+offset_right = 51.0
+offset_bottom = 27.0
+scale = Vector2(0.233566, 0.246153)
+text = "test"
+label_settings = SubResource("LabelSettings_l10hs")
+script = ExtResource("3_l10hs")
+unit = NodePath("../..")
+
+[node name="PriceLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -8.0
+offset_top = -24.0
+offset_right = 51.0
+offset_bottom = 21.0
+scale = Vector2(0.239528, 0.239528)
+text = "test"
+label_settings = SubResource("LabelSettings_eatwr")
+script = ExtResource("4_i7x45")
+unit = NodePath("../..")

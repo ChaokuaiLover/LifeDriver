@@ -12,7 +12,6 @@ func Enter():
 
 func Update(_delta: float):
 	target = worker.work_target
-	
 		
 	if  (worker.work_state == "success" or worker.work_state == "fail" or target == null) and !worker.inside_house:
 		Transitioned.emit(self, "GoToHouse")

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Life Driver"
 run/main_scene="res://scenes/game/game.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 run/max_fps=30
 config/icon="res://PJIcon.png"
 
@@ -47,6 +47,7 @@ AllUnit=""
 WorkerNode=""
 Shipping=""
 WorkBuilding=""
+WoodMarket=""
 
 [importer_defaults]
 
@@ -79,7 +80,6 @@ down={
 
 [physics]
 
-common/physics_ticks_per_second=30
 2d/default_gravity=0.0
 
 [rendering]
@@ -92,3 +92,4 @@ environment/ssao/quality=1
 environment/ssil/quality=1
 anti_aliasing/screen_space_roughness_limiter/enabled=false
 environment/glow/upscale_mode=0
+2d/snap/snap_2d_transforms_to_pixel=true

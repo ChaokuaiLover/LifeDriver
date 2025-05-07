@@ -1,7 +1,7 @@
 extends Sprite2D
-class_name Market
+class_name FoodMarket
 
-var money: int = 1000000000
+var money: int = 100000000
 var debt: int = 0
 var paid: int
 
@@ -18,27 +18,27 @@ var expenditure_growth_statement: Array
 var productivity: int
 var productivity_statement: Array = [0,0,0,0,0,0,0,0,0,0,0]
 
-var data_calculate_cycle_start: float = 30.0
+var data_calculate_cycle_start: float = 5.0
 var data_calculate_cycle: float
 var interest_rates = Data.InterestratesStart / 100
 var debt_calculate_cycle_start: float = Data.DebtCalculateCycleStart
 var debt_calculate_cycle: float
 
-var price: int = 5775
-var food_stock: int = 1000
+var price: int = 1170
+var food_stock: int = 500
 var food_stock_limit: int = 100000
-var price_offer: int = 5250
+var price_offer: int = 1060
 var pieces: int
 var sell_status: bool = true
 var buy_status: bool = true
 var price_plan: int = -1
 var price_change: float = 0
-var margin: float = 0.05
-var price_change_rates: float = 1.1
+var margin: float = 0.1
+var price_change_rates: float = 1.05
 
 
 func _adjust_price(plan):
-	price_change = ((float(price) * (price_change_rates - 1.0)) / float(price) * plan) * 100.0
+	price_change = ((float(price) * (price_change_rates - 1.0)) / float(price)) * 100.0
 	price = roundi(float(price) * float(price_change_rates ** plan))
 	price_plan = plan
 
@@ -94,15 +94,18 @@ func _process(delta: float):
 					
 			else: _adjust_price(1)
 					
-		margin = float(roundf(food_stock / 1428.0) + 10.0) / 100.0
+		margin = float(roundf((food_stock / 20.0) ** (0.5)) + 5.0) / 100.0
 		price_offer = int(float(price) * (1.0 - margin))
-		print("margin: ", margin * 100 , "%")
+		if true :
+			print("margin: ", margin * 100 , "%")
+			print("income:",income_statement)
+			print("income_growth:",income_growth_statement)
+		
 		data_calculate_cycle = data_calculate_cycle_start
 		
-		
-	if food_stock <  food_stock_limit * 0.003:
+	if food_stock <  food_stock_limit * 0.005:
 		sell_status = false
-	elif food_stock >= food_stock_limit * 0.003:
+	elif food_stock >= food_stock_limit * 0.005:
 		sell_status = true
 		
 	if food_stock >= food_stock_limit:

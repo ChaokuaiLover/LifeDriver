@@ -19,23 +19,22 @@ func  Exit():
 func Update(delta: float):
 	rest_time -= delta
 	need_energy = int(100.0 - worker.energy)
-	if worker.house.food_reserve >= need_energy and need_energy >= 5:
-		worker.energy += need_energy
-		worker.house.food_reserve -= need_energy
+	if worker.house.food_reserve > 0 and need_energy >= 5:
+		worker.energy += min(need_energy,worker.house.food_reserve)
+		worker.house.food_reserve -= min(need_energy,worker.house.food_reserve)
 		
 	if rest_time <= 0:
 		worker.mood = "fresh"
 		rest_time = rest_time_start
-	if worker.buy_target:
-		is_able_to_buy_food = worker.buy_target.sell_status and worker.money >= worker.food_price * worker.food_need
-		is_need_to_buy_food = worker.house.food_reserve < worker.house.food_reserve_limit * 0.8
+	if worker.food_market:
+		is_able_to_buy_food = worker.food_market.sell_status and worker.money >= worker.food_price * worker.food_limit
+		is_need_to_buy_food = worker.house.food_reserve < worker.house.food_reserve_limit
 		
 	if is_need_to_buy_food and is_able_to_buy_food and worker.mood == "fresh":
 		Transitioned.emit(self, "BuyFood")
 		
-	elif is_need_to_buy_food and false and worker.money < worker.food_price * worker.food_need and worker.debt < 60.0 * worker.average_income and worker.mood == "fresh":
+	elif is_need_to_buy_food and true and worker.debt <= 30 * worker.average_income and not worker.retire and worker.money < worker.food_price * worker.food_need and worker.mood == "fresh":
 		Transitioned.emit(self, "Loan")
 		
-	elif worker.energy > 70 and !worker.retire and worker.mood == "fresh":
+	elif worker.energy > 60 and !worker.retire and worker.mood == "fresh":
 		Transitioned.emit(self, "Work")
-		

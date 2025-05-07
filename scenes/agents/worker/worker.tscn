@@ -1,20 +1,20 @@
 [gd_scene load_steps=21 format=3 uid="uid://dc0c4xti7xuk5"]
 
-[ext_resource type="Script" path="res://scripts/agent/worker/worker_01.gd" id="1_2wn1j"]
+[ext_resource type="Script" uid="uid://uwigbcaa6rlr" path="res://scripts/agent/worker/worker_01.gd" id="1_2wn1j"]
 [ext_resource type="Texture2D" uid="uid://b88a0q3p5nf5b" path="res://assets/Agents/Agent01.png" id="2_oa74u"]
-[ext_resource type="Script" path="res://scripts/States/StateMachine.gd" id="3_5shy0"]
-[ext_resource type="Script" path="res://scripts/agent/worker/debt_label.gd" id="5_qgpo4"]
-[ext_resource type="Script" path="res://scripts/agent/worker/work.gd" id="5_ybwji"]
-[ext_resource type="Script" path="res://scripts/agent/worker/food_label.gd" id="6_a5yap"]
-[ext_resource type="Script" path="res://scripts/agent/worker/Loan.gd" id="6_yxcw5"]
-[ext_resource type="Script" path="res://scripts/agent/worker/label.gd" id="7_6n6mn"]
-[ext_resource type="Script" path="res://scripts/agent/worker/energy_label.gd" id="7_jytxs"]
-[ext_resource type="Script" path="res://scripts/agent/worker/store_food.gd" id="9_1avfs"]
-[ext_resource type="Script" path="res://scripts/agent/worker/buy_food.gd" id="9_opg8h"]
-[ext_resource type="Script" path="res://scripts/agent/worker/go_to_house.gd" id="10_0srnm"]
-[ext_resource type="Script" path="res://scripts/agent/worker/pay_loan.gd" id="10_nhtk6"]
-[ext_resource type="Script" path="res://scripts/agent/worker/rest.gd" id="12_bgufj"]
-[ext_resource type="Script" path="res://scripts/agent/worker/buy_house.gd" id="14_gbnfg"]
+[ext_resource type="Script" uid="uid://cu2fxti1cqgi" path="res://scripts/States/StateMachine.gd" id="3_5shy0"]
+[ext_resource type="Script" uid="uid://3gbmkcnnowac" path="res://scripts/agent/worker/debt_label.gd" id="5_qgpo4"]
+[ext_resource type="Script" uid="uid://ca1j481lfj2rv" path="res://scripts/agent/worker/work.gd" id="5_ybwji"]
+[ext_resource type="Script" uid="uid://foiwvln818bo" path="res://scripts/agent/worker/food_label.gd" id="6_a5yap"]
+[ext_resource type="Script" uid="uid://bnjlq6cm0ne67" path="res://scripts/agent/worker/Loan.gd" id="6_yxcw5"]
+[ext_resource type="Script" uid="uid://clyihhyisr6ax" path="res://scripts/agent/worker/label.gd" id="7_6n6mn"]
+[ext_resource type="Script" uid="uid://dma34afpud4o3" path="res://scripts/agent/worker/energy_label.gd" id="7_jytxs"]
+[ext_resource type="Script" uid="uid://dqug6lu8wbrtl" path="res://scripts/agent/worker/store_food.gd" id="9_1avfs"]
+[ext_resource type="Script" uid="uid://m7qs46gfcs07" path="res://scripts/agent/worker/buy_food.gd" id="9_opg8h"]
+[ext_resource type="Script" uid="uid://dy1vgueu3de4h" path="res://scripts/agent/worker/go_to_house.gd" id="10_0srnm"]
+[ext_resource type="Script" uid="uid://cqwpp22sw55oi" path="res://scripts/agent/worker/pay_loan.gd" id="10_nhtk6"]
+[ext_resource type="Script" uid="uid://bl057k8uqp8yu" path="res://scripts/agent/worker/rest.gd" id="12_bgufj"]
+[ext_resource type="Script" uid="uid://rnm86b30540a" path="res://scripts/agent/worker/buy_house.gd" id="14_gbnfg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h3pk0"]
 font_size = 32
@@ -123,6 +123,8 @@ worker = NodePath("../..")
 [node name="BuyFood" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
 script = ExtResource("9_opg8h")
 worker = NodePath("../..")
+
+[node name="BuyWood" type="Node" parent="StateMachine"]
 
 [node name="Work" type="Node" parent="StateMachine" node_paths=PackedStringArray("worker")]
 script = ExtResource("5_ybwji")

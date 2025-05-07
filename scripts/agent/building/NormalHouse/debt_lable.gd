@@ -5,4 +5,4 @@ func _process(_delta: float) -> void:
 	if unit.house_owner != null:
 		self.text = str(unit.house_owner.debt)
 	else:
-		self.text = str("empty")
+		self.text = str("")

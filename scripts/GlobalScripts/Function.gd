@@ -6,7 +6,7 @@ func _find_median(array):
 	target_array.sort()
 	var median_value
 	if num % 2 == 0:
-		median_value = target_array[int(num / 2)] + target_array[int(num / 2) + 1] / 2
+		median_value = (target_array[int(num / 2)] + target_array[int(num / 2) + 1]) / 2
 	else:
 		median_value =  target_array[int(num / 2)]
 	return median_value
@@ -18,11 +18,11 @@ func debt_compounding(current_debt,current_interest_rates):
 	
 	
 
-func produce_food(unit,worker,wage,multiplier):
-	unit.money -= multiplier * wage
-	worker.money += multiplier * wage
-	unit.food_stock += roundi((float(multiplier) * 2.0))
-	worker.energy -= float(multiplier)
+func produce_goods(unit,worker,wage,amount,multiplier):
+	unit.money -= int(float(amount * wage) * multiplier)
+	worker.money += int(float(amount * wage) * multiplier)
+	unit.goods_stock += floor((float(amount) * multiplier))
+	worker.energy -= float(amount)
 	
 
 func profit_calculation(income,expense):
@@ -95,18 +95,17 @@ func find_best_target_work(unit,target_array,speed,time_value):
 	var value_sum: float
 	var direction: Vector2
 	var best_target: Node2D
-	
+	var class_goods: Dictionary = {'Farm': 'food','LumberMill': 'wood'}
 	for target in target_array:
 		if unit != null and target != null:
 			if target.wage_offer > 0 and target.hire_status:
 				direction = target.global_position - unit.global_position
-				value_sum = float(target.wage_offer * target.food_multiplier) - (float(direction.length()) / float(speed)) * float(time_value + 1.0)
+				value_sum = float(float(target.wage_offer * target.goods_produce_amount * float(unit.goods_produce_multiplier[class_goods[target._get_class_name()]]))) - float(float(direction.length()) / float(speed)) * float(time_value + 1.0)
 				all_value_sum.push_back(value_sum)
 				all_target_price_and_time_value[target] = value_sum
 	best_target = all_target_price_and_time_value.find_key(all_value_sum.max())
 	return best_target
 	
-
 func find_best_target_sell(unit,target_array,speed,time_value):
 	var all_target_price_and_time_value: Dictionary = {}
 	var all_value_sum: Array = []

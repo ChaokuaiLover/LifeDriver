@@ -1,13 +1,15 @@
 extends CharacterBody2D
 class_name Worker
-const  move_speed: float = 1800.0
-const  hungry_time: float = 100.0 #seccond
+const  move_speed: float = 8000.0
+const  hungry_time: float = 150.0 #seccond
 const  energy_start : float = 100.0
 var speed_pixel_per_second: float = move_speed/ 30.0  #pixel per second
 var energy: float
 var  energy_drain_index: float = 1.0
 var energy_drain_rate: float = energy_start / hungry_time
-var age: float = 600.0 #second
+var max_age = 1200.0 #second
+var age: float = max_age
+var retire: bool = false
 
 var child_scene = preload("res://scenes/agents/worker/worker.tscn")
 var child: Node2D
@@ -31,19 +33,26 @@ var expenditure_statement: Array = [0,0,0,0,0]
 var average_income : float
 var expense: int
 
-var food_limit: int = 50 #pieces
-var food: int = 100 #pieces
+var food_limit: int = 30 #pieces
+var food: int = 50 #pieces
 var food_reserve_need: int
 var food_need: int
 var food_price: int
-var retire: bool = false
+
 var buy_food_status: bool = true
+
+var wood_limit: int = 10 #pieces
+var wood: int = 50 #pieces
+var wood_reserve_need: int
+var wood_need: int
+var wood_price: int
+var buy_wood_status: bool = true
 
 var data_scope: float = 6.0
 var status: String
 var all_work_target: Array
-var all_buy_target: Array
-var buy_target: Node2D
+var all_food_market: Array
+var food_market: Node2D
 var work_target: Node2D
 var current_target: Node2D
 var time_value: float
@@ -52,6 +61,7 @@ var house: Node2D
 var work_state: String
 var buy_food_state: String
 
+var goods_produce_multiplier: Dictionary = {food: 0,wood: 0}
 
 func aging(delta,current_age):
 	current_age -= delta
@@ -61,12 +71,17 @@ func food_reserve_need_calculating():
 	if house:
 		food_reserve_need = house.food_reserve_limit - house.food_reserve
 		
+func wood_reserve_need_calculating():
+	if house:
+		wood_reserve_need = house.wood_reserve_limit - house.wood_reserve
+
 func food_need_calculating():
 	food_need = food_limit - food
 	
 func energy_drain(delta,current_energy):
 	current_energy -= delta * energy_drain_rate * energy_drain_index
 	return current_energy
+
 
 func _financial():
 	income_statement.push_front(income)
@@ -90,8 +105,9 @@ func _ready():
 	energy = energy_start
 	debt_calculate_cycle = debt_calculate_cycle_start
 	data_calculate_cycle = data_calculate_cycle_start
-
-
+	goods_produce_multiplier['food'] = floorf(randf_range(2,4)*10)/10
+	goods_produce_multiplier['wood'] = ((goods_produce_multiplier['food'] - 6) ** 2) ** 0.5
+	
 func _process(delta: float):
 	energy = energy_drain(delta,energy)
 	age = aging(delta,age)
@@ -99,27 +115,28 @@ func _process(delta: float):
 	food_reserve_need_calculating()
 	
 	if house != null and inside_house: #Having a children
-		if house.food_reserve >= 150 and  is_able_to_have_child and age <= 540.0:
+		if house.food_reserve >= 250 and age < max_age - 120 and age > 120.0 and money >= food_price * 250 and is_able_to_have_child:
 			is_able_to_have_child = false
 			child = child_scene.instantiate()
-			house.food_reserve -= 150
+			house.food_reserve -= 225
 			get_tree().get_first_node_in_group("WorkerNode").add_child(child)
 			child.global_position = self.global_position
 			
 	
 	all_work_target = get_tree().get_nodes_in_group("WorkBuilding")
-	all_buy_target = get_tree().get_nodes_in_group("FoodMarket")
-	buy_target = Function.find_best_target_buy(house,all_buy_target,speed_pixel_per_second,time_value)
+	all_food_market = get_tree().get_nodes_in_group("FoodMarket")
+	food_market = Function.find_best_target_buy(house,all_food_market,speed_pixel_per_second,time_value)
 	work_target = Function.find_best_target_work(house,all_work_target,speed_pixel_per_second,time_value)
-	if buy_target:
-		food_price = buy_target.price
+	if food_market:
+		food_price = food_market.price
 	debt_calculate_cycle -= delta
 	
 	#Retire condition
-	if (money - debt >= int(age * float(food_price) * 1.2) or house.food_reserve >= age) and buy_target:
-		retire = true
-	else:
-		retire = false
+	if house:
+		if debt == 0 and ((money >= int((age*(energy_start/hungry_time)) * float(food_price) * 1.2) - debt) or house.food_reserve >= (age*(energy_start/hungry_time))) and food_market:
+			retire = true
+		elif debt > 0 or ((money < int((age*(energy_start/hungry_time)) * float(food_price) * 1.0) - debt) or house.food_reserve < (age*(energy_start/hungry_time))) :
+			retire = false
 		
 	if debt > 0 and interest_rates > 0 and debt_calculate_cycle <= 0:
 		debt = Function.debt_compounding(debt,interest_rates)
@@ -130,8 +147,7 @@ func _process(delta: float):
 		_financial()
 		data_calculate_cycle = data_calculate_cycle_start
 		
-		
-	time_value = average_income * 1.1
+	time_value = average_income * 1.5
 
 func _physics_process(_delta):
 	move_and_slide()
@@ -139,9 +155,7 @@ func _physics_process(_delta):
 	if energy <= 0 or age <= 0:
 		house.house_owner = null
 		
-		
-		if child == Node2D and debt < money:
-			child.money += money
-			child.debt += debt
+		if child == Node2D and money > debt :
+			child.money += money - debt
 			money = 0
 		queue_free()

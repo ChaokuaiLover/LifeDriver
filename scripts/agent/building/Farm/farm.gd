@@ -1,5 +1,5 @@
-extends Sprite2D
 class_name Farm
+extends Sprite2D
 var money: int = 10000000
 var debt: int
 var paid: int
@@ -7,15 +7,13 @@ var interest_rates = Data.InterestratesStart / 100 + 1
 var debt_calculate_cycle_start: float = Data.DebtCalculateCycleStart
 var debt_calculate_cycle: float
 var pieces: int
-var food_stock: int = 0
-var food_stock_limit:int = 1000
-var wage_offer: int = 10000
+var goods_stock: int = 0
+var goods_stock_limit:int = 10000
+var wage_offer: int = 1000
 var player: Node2D
 var time: float
 var all_sell_target: Array
 var sell_target: Node2D
-var employee_name_list: Array
-var employee_wage_list: Array
 
 var production_growth_statement: Array = [0,0]
 var profit: float
@@ -32,10 +30,11 @@ var production: int
 var production_statement: Array = [0,0]
 var profitable: bool
 
-var data_calculate_cycle_start: float = randf_range(20,25)
+var data_calculate_cycle_start: float = randf_range(4,6)
 var data_calculate_cycle: float
 
-var food_multiplier: int = 30
+var goods_produce_amount: int = 20
+var goods_produce_multiplier: int = 3
 var hire_status: bool = true
 var sell_status: bool = true
 
@@ -44,13 +43,15 @@ var price_plan: int
 var price_change: float = 0
 var wage_plan: int = 1
 var wage_change: float = 0
-var margin: float = 1.1
-
+var margin: float = 1.05
+func _get_class_name():
+	return 'Farm'
+	
 func _adjust_wage(plan):
-	wage_change = ((float(wage_offer) * (margin - 1)) / float(wage_offer) * plan) * 100.0
+	wage_change = ((float(wage_offer) * (margin - 1)) / float(wage_offer)) * 100.0
 	wage_offer = roundi(float(wage_offer * float(margin ** plan) ))
 	wage_plan = plan
-	
+
 func _ready():
 	data_calculate_cycle = data_calculate_cycle_start
 	income_statement.resize(5)
@@ -63,17 +64,17 @@ func _ready():
 	production_growth_statement.resize(5)
 	
 	$Area2D.body_entered.connect(func producing_food(body: Node2D):
-		if body and body.status == "Work" and body.energy >= 50 and body.current_target == self and hire_status:
+		if body and body.status == "Work" and body.energy >= goods_produce_amount and body.current_target == self and hire_status:
 			body.visible = false
 			body.work_state = "doing"
 			
-			Function.produce_food(self,body,wage_offer,food_multiplier)
-			expense += food_multiplier * wage_offer
-			production += food_multiplier
-			body.income += food_multiplier * wage_offer
+			Function.produce_goods(self,body,wage_offer,goods_produce_amount,body.goods_produce_multiplier['food'])
+			expense += goods_produce_amount * wage_offer * body.goods_produce_multiplier['food']
+			production += goods_produce_amount * body.goods_produce_multiplier['food']
+			body.income += goods_produce_amount * wage_offer * body.goods_produce_multiplier['food']
 			body.work_state = "success"
 			body.mood = "tired"
-			await get_tree().create_timer(3.0).timeout
+			await get_tree().create_timer(3).timeout
 		elif body.status == "Work" and body.energy >= 50 and body.current_target == self and !hire_status:
 			body.work_state = "fail"
 			)
@@ -87,15 +88,15 @@ func _ready():
 func _process(delta: float):
 	all_sell_target = get_tree().get_nodes_in_group("FoodMarket")
 	sell_target = Function.find_best_target_sell(self,all_sell_target,1,1)
-	profitable = round(sell_target.price_offer * 2.0) >= round(wage_offer * 1.05)
+	profitable = round(sell_target.price_offer) >= round(wage_offer * 1.05)
 	if sell_target:
-		if food_stock > 0 and sell_target.buy_status and profitable:
-			money += food_stock * sell_target.price_offer
-			sell_target.money -= food_stock * sell_target.price_offer
-			sell_target.food_stock += food_stock
-			sell_target.expense += food_stock * sell_target.price_offer
-			sell_target.productivity += food_stock
-			food_stock = 0
+		if goods_stock > 0 and sell_target.buy_status and profitable:
+			money += goods_stock * sell_target.price_offer
+			sell_target.money -= goods_stock * sell_target.price_offer
+			sell_target.food_stock += goods_stock
+			sell_target.expense += goods_stock * sell_target.price_offer
+			sell_target.productivity += goods_stock
+			goods_stock = 0
 		else:
 			hire_status = false
 	else:
@@ -131,9 +132,9 @@ func _process(delta: float):
 		debt_calculate_cycle += debt_calculate_cycle_start
 		debt = Function.debt_compounding(debt,interest_rates)
 		
-	if money < sell_target.price_offer * 500 or food_stock >= food_stock_limit:
+	if money < sell_target.price_offer * 500 or goods_stock >= goods_stock_limit:
 		hire_status = false
-	elif money >= sell_target.price_offer * 500 and food_stock < food_stock_limit:
+	elif money >= sell_target.price_offer * 500 and goods_stock < goods_stock_limit:
 		hire_status = true
 		
 func _physics_process(_delta):

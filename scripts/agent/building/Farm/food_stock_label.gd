@@ -3,4 +3,4 @@ extends Label
 
 func _process(_delta: float) -> void:
 	
-	self.text = str(round(unit.food_stock))
+	self.text = str(round(unit.goods_stock))
