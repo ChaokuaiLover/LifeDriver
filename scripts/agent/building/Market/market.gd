@@ -18,7 +18,7 @@ var expenditure_growth_statement: Array
 var productivity: int
 var productivity_statement: Array = [0,0,0,0,0,0,0,0,0,0,0]
 
-var data_calculate_cycle_start: float = 5.0
+var data_calculate_cycle_start: float = 10.0
 var data_calculate_cycle: float
 var interest_rates = Data.InterestratesStart / 100
 var debt_calculate_cycle_start: float = Data.DebtCalculateCycleStart
@@ -94,7 +94,12 @@ func _process(delta: float):
 					
 			else: _adjust_price(1)
 					
-		margin = float(roundf((food_stock / 20.0) ** (0.5)) + 5.0) / 100.0
+		if food_stock <= 50000:
+			margin = float(floor(float((float(food_stock) / 200000) + 0.05) * 100) / 100)
+		elif food_stock > 50000:
+			margin = float(floor(float((float(food_stock) / 80000) - 0.325) * 100) / 100)
+			
+			
 		price_offer = int(float(price) * (1.0 - margin))
 		if true :
 			print("margin: ", margin * 100 , "%")

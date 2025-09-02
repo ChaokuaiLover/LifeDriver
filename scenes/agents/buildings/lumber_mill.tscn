@@ -14,7 +14,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_fmjpn"]
 font_size = 32
 
-[node name="lumber_mill" type="Sprite2D" groups=["WorkBuilding"]]
+[node name="lumber_mill" type="Sprite2D" groups=["AllUnit", "WorkBuilding"]]
 texture = ExtResource("1_50jf4")
 script = ExtResource("2_idsi5")
 
@@ -25,6 +25,7 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_1clpq")
 
 [node name="Money" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+visible = false
 offset_left = -7.0
 offset_top = -17.0
 offset_right = 52.0

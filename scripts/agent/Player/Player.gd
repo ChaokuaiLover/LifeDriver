@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var all_worker :Array
+var market
 @export var move_speed : float = 1000
 var time: float
 var total_debt: int = 0
@@ -9,6 +10,15 @@ func _ready():
 		all_worker = get_tree().get_nodes_in_group("Worker")
 		for worker in all_worker:
 			worker.money += 100000
+		)
+	%Button2.pressed.connect(func _buy_wood():
+		market = get_tree().get_first_node_in_group("WoodMarket")
+		if market.goods_stock < 5000:
+			return
+		market.money += market.price * 5000
+		market.goods_stock -= 5000 
+		market.income += market.price * 5000
+		market.sales += 5000
 		)
 func _process(delta: float):
 	time += delta

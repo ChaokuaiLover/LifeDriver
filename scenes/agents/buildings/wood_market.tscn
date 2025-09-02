@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cd35ii6v60vej"]
+[gd_scene load_steps=9 format=3 uid="uid://cd35ii6v60vej"]
 
 [ext_resource type="Texture2D" uid="uid://docwklamu1pbh" path="res://assets/Agents/wood_market.png" id="1_emgi3"]
 [ext_resource type="Script" uid="uid://cn2bgp6gonvbb" path="res://scripts/agent/building/WoodMarket/wood_market.gd" id="2_6hpq8"]
 [ext_resource type="Script" uid="uid://bhsont5jan6jv" path="res://scripts/agent/building/WoodMarket/money_label.gd" id="3_l10hs"]
 [ext_resource type="Script" uid="uid://ncnjvwk5bgdk" path="res://scripts/agent/building/Farm/price_label.gd" id="4_i7x45"]
+[ext_resource type="Script" uid="uid://4csb3gc8o54n" path="res://scripts/agent/building/WoodMarket/wood_stock_label.gd" id="5_eatwr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l10hs"]
 radius = 7.0
@@ -14,7 +15,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_eatwr"]
 font_size = 32
 
-[node name="WoodMarket" type="Sprite2D" groups=["WoodMarket"]]
+[node name="WoodMarket" type="Sprite2D" groups=["AllUnit", "WoodMarket"]]
 texture = ExtResource("1_emgi3")
 script = ExtResource("2_6hpq8")
 
@@ -44,4 +45,16 @@ scale = Vector2(0.239528, 0.239528)
 text = "test"
 label_settings = SubResource("LabelSettings_eatwr")
 script = ExtResource("4_i7x45")
+unit = NodePath("../..")
+
+[node name="WoodStockLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+z_index = 2
+offset_left = -8.0
+offset_top = -29.0
+offset_right = 51.0
+offset_bottom = 16.0
+scale = Vector2(0.239528, 0.239528)
+text = "test"
+label_settings = SubResource("LabelSettings_eatwr")
+script = ExtResource("5_eatwr")
 unit = NodePath("../..")

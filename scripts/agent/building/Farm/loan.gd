@@ -4,6 +4,7 @@ class_name FarmLoan
 var target
 var all_target: Array
 var direction
+
 func Enter():
 	all_target = get_tree().get_nodes_in_group("Bank")
 	

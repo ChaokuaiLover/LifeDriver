@@ -54,12 +54,11 @@ script = ExtResource("3_edqu2")
 unit = NodePath("../..")
 
 [node name="FoodReserveLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
-visible = false
 z_index = 10
 offset_left = -6.0
-offset_top = -23.0
+offset_top = -8.0
 offset_right = 53.0
-offset_bottom = 22.0
+offset_bottom = 37.0
 scale = Vector2(0.220272, 0.220272)
 text = "test"
 label_settings = SubResource("LabelSettings_gmpcp")
@@ -67,6 +66,7 @@ script = ExtResource("4_iy5b8")
 unit = NodePath("../..")
 
 [node name="MoneyLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+visible = false
 z_index = 10
 offset_left = -6.0
 offset_top = -14.0
@@ -80,11 +80,12 @@ script = ExtResource("5_ak5ko")
 unit = NodePath("../..")
 
 [node name="DebtLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+visible = false
 z_index = 10
 offset_left = -6.0
-offset_top = -20.0
+offset_top = -14.0
 offset_right = 53.0
-offset_bottom = 25.0
+offset_bottom = 31.0
 scale = Vector2(0.220053, 0.220053)
 text = "test"
 label_settings = SubResource("LabelSettings_kbjsu")
@@ -92,6 +93,7 @@ script = ExtResource("6_7l8pj")
 unit = NodePath("../..")
 
 [node name="FoodProdMulLabel" type="Label" parent="Area2D" node_paths=PackedStringArray("unit")]
+visible = false
 z_index = 10
 offset_left = -6.0
 offset_top = -25.0

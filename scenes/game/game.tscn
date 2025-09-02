@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://lgueoblclrqk"]
+[gd_scene load_steps=13 format=4 uid="uid://lgueoblclrqk"]
 
 [ext_resource type="Texture2D" uid="uid://sfpg1lfp00ix" path="res://assets/world/LD_tile_set.png" id="1_irmry"]
 [ext_resource type="PackedScene" uid="uid://dc0c4xti7xuk5" path="res://scenes/agents/worker/worker.tscn" id="2_jkuqy"]
+[ext_resource type="PackedScene" uid="uid://cmsv3usbuvuf7" path="res://scenes/agents/buildings/lumber_mill.tscn" id="3_bdhmt"]
 [ext_resource type="PackedScene" uid="uid://eg1gj4vdl7ib" path="res://scenes/agents/buildings/food_market.tscn" id="3_skhaj"]
 [ext_resource type="PackedScene" uid="uid://dh172vnuik5xc" path="res://scenes/player/Player.tscn" id="4_6y55y"]
+[ext_resource type="PackedScene" uid="uid://cd35ii6v60vej" path="res://scenes/agents/buildings/wood_market.tscn" id="4_87uf6"]
 [ext_resource type="PackedScene" uid="uid://rd83y2dtu8us" path="res://scenes/agents/buildings/farm.tscn" id="5_kn3qb"]
 [ext_resource type="PackedScene" uid="uid://c4tbct4ne60tl" path="res://scenes/agents/buildings/normal_house.tscn" id="6_8ax85"]
 
@@ -62,203 +64,203 @@ unique_name_in_owner = true
 
 [node name="worker" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(775, 322)
+position = Vector2(814, 296)
 
 [node name="worker2" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(759, 400)
+position = Vector2(749, 403)
 
 [node name="worker3" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(805, 399)
+position = Vector2(808, 405)
 
 [node name="worker4" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(849, 402)
+position = Vector2(852, 408)
 
 [node name="worker5" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(880, 339)
+position = Vector2(883, 345)
 
 [node name="worker6" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(685, 401)
+position = Vector2(675, 404)
 
 [node name="worker7" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(737, 398)
+position = Vector2(727, 401)
 
 [node name="worker8" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(783, 397)
+position = Vector2(773, 400)
 
 [node name="worker9" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(828, 398)
+position = Vector2(831, 404)
 
 [node name="worker10" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(881, 396)
+position = Vector2(884, 402)
 
 [node name="worker11" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(662, 476)
+position = Vector2(652, 495)
 
 [node name="worker12" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(759, 415)
+position = Vector2(749, 434)
 
 [node name="worker13" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(805, 414)
+position = Vector2(799, 426)
 
 [node name="worker14" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(850, 415)
+position = Vector2(844, 427)
 
 [node name="worker15" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(797, 354)
+position = Vector2(791, 366)
 
 [node name="worker16" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(685, 416)
+position = Vector2(675, 435)
 
 [node name="worker17" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(737, 413)
+position = Vector2(727, 432)
 
 [node name="worker18" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(783, 412)
+position = Vector2(773, 431)
 
 [node name="worker19" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(828, 413)
+position = Vector2(822, 425)
 
 [node name="worker20" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(881, 411)
+position = Vector2(875, 423)
 
 [node name="worker21" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(708, 438)
+position = Vector2(698, 457)
 
 [node name="worker22" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(765, 471)
+position = Vector2(755, 490)
 
 [node name="worker23" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(806, 434)
+position = Vector2(806, 450)
 
 [node name="worker24" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(851, 435)
+position = Vector2(851, 451)
 
 [node name="worker25" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(904, 433)
+position = Vector2(904, 449)
 
 [node name="worker26" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(686, 436)
+position = Vector2(676, 455)
 
 [node name="worker27" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(738, 433)
+position = Vector2(728, 452)
 
 [node name="worker28" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(784, 432)
+position = Vector2(774, 451)
 
 [node name="worker29" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(829, 433)
+position = Vector2(829, 449)
 
 [node name="worker30" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(882, 431)
+position = Vector2(882, 447)
 
 [node name="worker31" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(708, 453)
+position = Vector2(698, 472)
 
 [node name="worker32" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(760, 450)
+position = Vector2(750, 469)
 
 [node name="worker33" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(789, 412)
+position = Vector2(779, 431)
 
 [node name="worker34" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(851, 450)
+position = Vector2(851, 466)
 
 [node name="worker35" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(904, 448)
+position = Vector2(904, 464)
 
 [node name="worker36" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(686, 451)
+position = Vector2(676, 470)
 
 [node name="worker37" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(772, 354)
+position = Vector2(762, 357)
 
 [node name="worker38" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(834, 392)
+position = Vector2(837, 398)
 
 [node name="worker39" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(887, 390)
+position = Vector2(890, 396)
 
 [node name="worker40" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(669, 393)
+position = Vector2(659, 396)
 
 [node name="worker41" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(722, 412)
+position = Vector2(712, 431)
 
 [node name="worker42" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(774, 409)
+position = Vector2(764, 428)
 
 [node name="worker43" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(803, 371)
+position = Vector2(797, 383)
 
 [node name="worker44" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(865, 409)
+position = Vector2(859, 421)
 
 [node name="worker45" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(918, 407)
+position = Vector2(912, 419)
 
 [node name="worker46" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(700, 410)
+position = Vector2(690, 429)
 
 [node name="worker47" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(786, 313)
+position = Vector2(776, 316)
 
 [node name="worker48" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(848, 351)
+position = Vector2(851, 357)
 
 [node name="worker49" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(901, 349)
+position = Vector2(904, 355)
 
 [node name="worker50" parent="worker" instance=ExtResource("2_jkuqy")]
 z_index = 5
-position = Vector2(683, 352)
+position = Vector2(673, 355)
 
 [node name="building" type="Node" parent="."]
 
@@ -267,862 +269,648 @@ position = Vector2(683, 352)
 [node name="Farm" type="Node" parent="building"]
 
 [node name="farm" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(758, 435)
+position = Vector2(792, 360)
 
-[node name="farm2" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(829, 407)
+[node name="farm7" parent="building/Farm" instance=ExtResource("5_kn3qb")]
+position = Vector2(826, 420)
+
+[node name="farm8" parent="building/Farm" instance=ExtResource("5_kn3qb")]
+position = Vector2(665, 421)
+
+[node name="farm9" parent="building/Farm" instance=ExtResource("5_kn3qb")]
+position = Vector2(791, 264)
 
 [node name="farm3" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(771, 382)
+position = Vector2(845, 420)
 
 [node name="farm4" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(806, 451)
-
-[node name="farm5" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(929, 369)
+position = Vector2(791, 503)
 
 [node name="farm6" parent="building/Farm" instance=ExtResource("5_kn3qb")]
-position = Vector2(808, 377)
+position = Vector2(714, 421)
 
 [node name="Market" type="Node" parent="building"]
 
 [node name="Market" parent="building/Market" instance=ExtResource("3_skhaj")]
-position = Vector2(793, 421)
+position = Vector2(794, 422)
+
+[node name="WoodMarket" parent="building/Market" instance=ExtResource("4_87uf6")]
+position = Vector2(792, 459)
 
 [node name="NormalHouse" type="Node" parent="building"]
 
 [node name="NormalHouse" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(703, 392)
+position = Vector2(674, 354)
 
 [node name="NormalHouse2" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(726, 358)
+position = Vector2(697, 354)
 
 [node name="NormalHouse3" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(689, 322)
+position = Vector2(721, 354)
 
 [node name="NormalHouse4" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(653, 360)
+position = Vector2(743, 354)
 
 [node name="NormalHouse5" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(696, 359)
+position = Vector2(766, 354)
 
 [node name="NormalHouse6" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(748, 345)
+position = Vector2(674, 375)
 
 [node name="NormalHouse7" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(785, 304)
+position = Vector2(697, 375)
 
 [node name="NormalHouse8" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(748, 268)
+position = Vector2(721, 375)
 
 [node name="NormalHouse9" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(712, 306)
+position = Vector2(743, 375)
 
 [node name="NormalHouse10" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(748, 308)
+position = Vector2(766, 375)
 
 [node name="NormalHouse11" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(850, 370)
+position = Vector2(674, 395)
 
 [node name="NormalHouse12" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(887, 329)
+position = Vector2(697, 395)
 
 [node name="NormalHouse13" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(850, 293)
+position = Vector2(721, 395)
 
 [node name="NormalHouse14" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(814, 331)
+position = Vector2(743, 395)
 
 [node name="NormalHouse15" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(850, 333)
+position = Vector2(766, 395)
 
 [node name="NormalHouse16" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 432)
+position = Vector2(674, 334)
 
 [node name="NormalHouse17" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(949, 391)
+position = Vector2(697, 334)
 
 [node name="NormalHouse18" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 355)
+position = Vector2(721, 334)
 
 [node name="NormalHouse19" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(876, 393)
+position = Vector2(743, 334)
 
 [node name="NormalHouse20" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 395)
+position = Vector2(766, 334)
 
 [node name="NormalHouse21" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(853, 511)
+position = Vector2(674, 315)
 
 [node name="NormalHouse22" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(890, 470)
+position = Vector2(697, 315)
 
 [node name="NormalHouse23" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(853, 434)
+position = Vector2(721, 315)
 
 [node name="NormalHouse24" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(817, 472)
+position = Vector2(743, 315)
 
 [node name="NormalHouse25" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(853, 474)
+position = Vector2(766, 315)
 
 [node name="NormalHouse26" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(767, 547)
+position = Vector2(819, 356)
 
 [node name="NormalHouse27" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(804, 506)
+position = Vector2(842, 356)
 
 [node name="NormalHouse28" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(767, 470)
+position = Vector2(866, 356)
 
 [node name="NormalHouse29" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(731, 508)
+position = Vector2(888, 356)
 
 [node name="NormalHouse30" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(767, 510)
+position = Vector2(911, 356)
 
 [node name="NormalHouse31" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(702, 495)
+position = Vector2(819, 377)
 
 [node name="NormalHouse32" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(739, 454)
+position = Vector2(842, 377)
 
 [node name="NormalHouse33" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(702, 418)
+position = Vector2(866, 377)
 
 [node name="NormalHouse34" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(666, 456)
+position = Vector2(888, 377)
 
 [node name="NormalHouse35" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(702, 458)
+position = Vector2(911, 377)
 
 [node name="NormalHouse36" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(618, 450)
+position = Vector2(819, 397)
 
 [node name="NormalHouse37" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(655, 409)
+position = Vector2(842, 397)
 
 [node name="NormalHouse38" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(618, 373)
+position = Vector2(866, 397)
 
 [node name="NormalHouse39" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(582, 411)
+position = Vector2(888, 397)
 
 [node name="NormalHouse40" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(618, 413)
+position = Vector2(911, 397)
 
 [node name="NormalHouse41" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(645, 326)
+position = Vector2(819, 336)
 
 [node name="NormalHouse42" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(682, 285)
+position = Vector2(842, 336)
 
 [node name="NormalHouse43" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(645, 249)
+position = Vector2(866, 336)
 
 [node name="NormalHouse44" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(609, 287)
+position = Vector2(888, 336)
 
 [node name="NormalHouse45" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(645, 289)
+position = Vector2(911, 336)
 
 [node name="NormalHouse46" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(714, 270)
+position = Vector2(819, 317)
 
 [node name="NormalHouse47" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(751, 229)
+position = Vector2(842, 317)
 
 [node name="NormalHouse48" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(714, 193)
+position = Vector2(866, 317)
 
 [node name="NormalHouse49" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(678, 231)
+position = Vector2(888, 317)
 
 [node name="NormalHouse50" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(714, 233)
+position = Vector2(911, 317)
 
 [node name="NormalHouse51" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(822, 293)
+position = Vector2(816, 482)
 
 [node name="NormalHouse52" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(859, 252)
+position = Vector2(839, 482)
 
 [node name="NormalHouse53" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(822, 216)
+position = Vector2(863, 482)
 
 [node name="NormalHouse54" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(786, 254)
+position = Vector2(885, 482)
 
 [node name="NormalHouse55" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(822, 256)
+position = Vector2(908, 482)
 
 [node name="NormalHouse56" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(919, 333)
+position = Vector2(816, 503)
 
 [node name="NormalHouse57" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(956, 292)
+position = Vector2(839, 503)
 
 [node name="NormalHouse58" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(919, 256)
+position = Vector2(863, 503)
 
 [node name="NormalHouse59" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(883, 294)
+position = Vector2(885, 503)
 
 [node name="NormalHouse60" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(919, 296)
+position = Vector2(908, 503)
 
 [node name="NormalHouse61" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(985, 397)
+position = Vector2(816, 523)
 
 [node name="NormalHouse62" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1022, 356)
+position = Vector2(839, 523)
 
 [node name="NormalHouse63" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(985, 320)
+position = Vector2(863, 523)
 
 [node name="NormalHouse64" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(949, 358)
+position = Vector2(885, 523)
 
 [node name="NormalHouse65" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(985, 360)
+position = Vector2(908, 523)
 
 [node name="NormalHouse66" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(957, 499)
+position = Vector2(816, 462)
 
 [node name="NormalHouse67" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(994, 458)
+position = Vector2(839, 462)
 
 [node name="NormalHouse68" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(957, 422)
+position = Vector2(863, 462)
 
 [node name="NormalHouse69" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(921, 460)
+position = Vector2(885, 462)
 
 [node name="NormalHouse70" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(957, 462)
+position = Vector2(908, 462)
 
 [node name="NormalHouse71" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(928, 563)
+position = Vector2(816, 443)
 
 [node name="NormalHouse72" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(965, 522)
+position = Vector2(839, 443)
 
 [node name="NormalHouse73" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(928, 486)
+position = Vector2(863, 443)
 
 [node name="NormalHouse74" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(892, 524)
+position = Vector2(885, 443)
 
 [node name="NormalHouse75" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(928, 526)
+position = Vector2(908, 443)
 
 [node name="NormalHouse76" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(831, 574)
+position = Vector2(674, 483)
 
 [node name="NormalHouse77" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(868, 533)
+position = Vector2(697, 483)
 
 [node name="NormalHouse78" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(831, 497)
+position = Vector2(721, 483)
 
 [node name="NormalHouse79" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(795, 535)
+position = Vector2(743, 483)
 
 [node name="NormalHouse80" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(935, 443)
-
-[node name="NormalHouse276" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(638, 390)
+position = Vector2(766, 483)
 
 [node name="NormalHouse81" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(642, 550)
+position = Vector2(674, 504)
 
 [node name="NormalHouse82" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(679, 509)
+position = Vector2(697, 504)
 
 [node name="NormalHouse83" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(642, 473)
+position = Vector2(721, 504)
 
 [node name="NormalHouse84" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(606, 511)
+position = Vector2(743, 504)
 
 [node name="NormalHouse85" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(642, 513)
+position = Vector2(766, 504)
 
 [node name="NormalHouse86" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(747, 609)
+position = Vector2(674, 524)
 
 [node name="NormalHouse87" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(784, 568)
+position = Vector2(697, 524)
 
 [node name="NormalHouse88" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(747, 532)
+position = Vector2(721, 524)
 
 [node name="NormalHouse89" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(711, 570)
+position = Vector2(743, 524)
 
 [node name="NormalHouse90" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(747, 572)
+position = Vector2(766, 524)
 
 [node name="NormalHouse91" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(682, 634)
+position = Vector2(674, 463)
 
 [node name="NormalHouse92" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(719, 593)
+position = Vector2(697, 463)
 
 [node name="NormalHouse93" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(682, 557)
+position = Vector2(721, 463)
 
 [node name="NormalHouse94" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(646, 595)
+position = Vector2(743, 463)
 
 [node name="NormalHouse95" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(682, 597)
+position = Vector2(766, 463)
 
 [node name="NormalHouse96" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 372)
+position = Vector2(674, 444)
 
 [node name="NormalHouse97" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(589, 331)
+position = Vector2(697, 444)
 
 [node name="NormalHouse98" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 295)
+position = Vector2(721, 444)
 
 [node name="NormalHouse99" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(516, 333)
+position = Vector2(743, 444)
 
 [node name="NormalHouse100" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 335)
+position = Vector2(766, 444)
 
 [node name="NormalHouse101" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-visible = false
-position = Vector2(1033, 467)
+position = Vector2(819, 297)
 
 [node name="NormalHouse102" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1070, 426)
+position = Vector2(842, 297)
 
 [node name="NormalHouse103" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1033, 390)
+position = Vector2(866, 297)
 
 [node name="NormalHouse104" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(997, 428)
+position = Vector2(888, 297)
 
 [node name="NormalHouse105" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1033, 430)
+position = Vector2(911, 297)
 
 [node name="NormalHouse106" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 510)
+position = Vector2(675, 275)
 
 [node name="NormalHouse107" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(589, 469)
+position = Vector2(698, 275)
 
 [node name="NormalHouse108" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 433)
+position = Vector2(722, 275)
 
 [node name="NormalHouse109" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(516, 471)
+position = Vector2(744, 275)
 
 [node name="NormalHouse110" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 473)
+position = Vector2(767, 275)
 
 [node name="NormalHouse111" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(579, 612)
+position = Vector2(675, 295)
 
 [node name="NormalHouse112" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(616, 571)
+position = Vector2(698, 295)
 
 [node name="NormalHouse113" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(579, 535)
+position = Vector2(722, 295)
 
 [node name="NormalHouse114" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(543, 573)
+position = Vector2(744, 295)
 
 [node name="NormalHouse115" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(579, 575)
+position = Vector2(767, 295)
 
 [node name="NormalHouse116" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(487, 436)
+position = Vector2(819, 277)
 
 [node name="NormalHouse117" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(524, 395)
+position = Vector2(842, 277)
 
 [node name="NormalHouse118" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(487, 359)
+position = Vector2(866, 277)
 
 [node name="NormalHouse119" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(451, 397)
+position = Vector2(888, 277)
 
 [node name="NormalHouse120" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(487, 399)
+position = Vector2(911, 277)
 
 [node name="NormalHouse121" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(875, 640)
+position = Vector2(653, 294)
 
 [node name="NormalHouse122" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 599)
+position = Vector2(842, 258)
 
 [node name="NormalHouse123" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(875, 563)
+position = Vector2(866, 258)
 
 [node name="NormalHouse124" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(839, 601)
+position = Vector2(888, 258)
 
 [node name="NormalHouse125" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(875, 603)
+position = Vector2(932, 299)
 
 [node name="NormalHouse126" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(588, 277)
+position = Vector2(927, 481)
 
 [node name="NormalHouse127" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(625, 236)
+position = Vector2(950, 481)
 
 [node name="NormalHouse128" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(588, 200)
+position = Vector2(974, 481)
 
 [node name="NormalHouse129" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(552, 238)
+position = Vector2(931, 357)
 
 [node name="NormalHouse130" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(588, 240)
-
-[node name="NormalHouse211" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 316)
-
-[node name="NormalHouse212" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(527, 275)
-
-[node name="NormalHouse213" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 239)
-
-[node name="NormalHouse214" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(454, 277)
-
-[node name="NormalHouse215" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 279)
-
-[node name="NormalHouse216" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(431, 383)
-
-[node name="NormalHouse217" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(468, 342)
-
-[node name="NormalHouse218" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(431, 306)
-
-[node name="NormalHouse219" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(395, 344)
-
-[node name="NormalHouse220" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(431, 346)
-
-[node name="NormalHouse221" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(423, 478)
-
-[node name="NormalHouse222" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(460, 437)
-
-[node name="NormalHouse223" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(423, 401)
-
-[node name="NormalHouse224" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(387, 439)
-
-[node name="NormalHouse225" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(423, 441)
-
-[node name="NormalHouse226" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(397, 551)
-
-[node name="NormalHouse227" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(434, 510)
-
-[node name="NormalHouse228" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(397, 474)
-
-[node name="NormalHouse229" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(361, 512)
-
-[node name="NormalHouse230" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(397, 514)
-
-[node name="NormalHouse231" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 191)
-
-[node name="NormalHouse232" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(949, 150)
-
-[node name="NormalHouse233" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 114)
-
-[node name="NormalHouse234" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(876, 152)
-
-[node name="NormalHouse235" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(912, 154)
-
-[node name="NormalHouse236" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(519, 236)
-
-[node name="NormalHouse237" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(556, 195)
-
-[node name="NormalHouse238" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(519, 159)
-
-[node name="NormalHouse239" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(483, 197)
-
-[node name="NormalHouse240" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(519, 199)
-
-[node name="NormalHouse241" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(955, 662)
-
-[node name="NormalHouse242" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(992, 621)
-
-[node name="NormalHouse243" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(955, 585)
-
-[node name="NormalHouse244" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(919, 623)
-
-[node name="NormalHouse245" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(955, 625)
-
-[node name="NormalHouse246" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1141, 494)
-
-[node name="NormalHouse247" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1178, 453)
-
-[node name="NormalHouse248" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1141, 417)
-
-[node name="NormalHouse249" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1105, 455)
-
-[node name="NormalHouse250" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1141, 457)
-
-[node name="NormalHouse251" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(426, 284)
-
-[node name="NormalHouse252" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(463, 243)
-
-[node name="NormalHouse253" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(426, 207)
-
-[node name="NormalHouse254" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(390, 245)
-
-[node name="NormalHouse255" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(426, 247)
-
-[node name="NormalHouse256" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1024, 224)
-
-[node name="NormalHouse257" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1061, 183)
-
-[node name="NormalHouse258" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1024, 147)
-
-[node name="NormalHouse259" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(988, 185)
-
-[node name="NormalHouse260" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1024, 187)
-
-[node name="NormalHouse151" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(646, 218)
-
-[node name="NormalHouse152" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(683, 177)
-
-[node name="NormalHouse153" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(646, 141)
-
-[node name="NormalHouse154" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(610, 179)
-
-[node name="NormalHouse155" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(646, 181)
-
-[node name="NormalHouse156" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(750, 198)
-
-[node name="NormalHouse157" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(787, 157)
-
-[node name="NormalHouse158" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(750, 121)
-
-[node name="NormalHouse159" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(714, 159)
-
-[node name="NormalHouse160" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(750, 161)
-
-[node name="NormalHouse161" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(851, 226)
-
-[node name="NormalHouse162" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(888, 185)
-
-[node name="NormalHouse163" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(851, 149)
-
-[node name="NormalHouse164" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(815, 187)
-
-[node name="NormalHouse165" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(851, 189)
-
-[node name="NormalHouse166" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(945, 263)
-
-[node name="NormalHouse167" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(982, 222)
-
-[node name="NormalHouse168" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(945, 186)
-
-[node name="NormalHouse169" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(909, 224)
-
-[node name="NormalHouse170" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(945, 226)
-
-[node name="NormalHouse171" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1004, 299)
-
-[node name="NormalHouse172" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1041, 258)
-
-[node name="NormalHouse173" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1004, 222)
-
-[node name="NormalHouse174" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(968, 260)
-
-[node name="NormalHouse175" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1004, 262)
-
-[node name="NormalHouse176" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1059, 358)
-
-[node name="NormalHouse177" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1096, 317)
-
-[node name="NormalHouse178" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1059, 281)
-
-[node name="NormalHouse179" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1023, 319)
-
-[node name="NormalHouse180" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1059, 321)
-
-[node name="NormalHouse181" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1114, 422)
-
-[node name="NormalHouse182" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1151, 381)
-
-[node name="NormalHouse183" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1114, 345)
-
-[node name="NormalHouse184" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1078, 383)
-
-[node name="NormalHouse185" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1114, 385)
-
-[node name="NormalHouse186" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1065, 539)
-
-[node name="NormalHouse187" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1102, 498)
-
-[node name="NormalHouse188" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1065, 462)
-
-[node name="NormalHouse189" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1029, 500)
-
-[node name="NormalHouse190" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1065, 502)
-
-[node name="NormalHouse191" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(992, 594)
-
-[node name="NormalHouse192" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(1029, 553)
-
-[node name="NormalHouse193" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(992, 517)
-
-[node name="NormalHouse194" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(956, 555)
-
-[node name="NormalHouse195" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(992, 557)
-
-[node name="NormalHouse196" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(799, 673)
-
-[node name="NormalHouse197" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(836, 632)
-
-[node name="NormalHouse198" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(799, 596)
-
-[node name="NormalHouse199" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(763, 634)
-
-[node name="NormalHouse200" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(799, 636)
-
-[node name="NormalHouse201" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(610, 690)
-
-[node name="NormalHouse202" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(647, 649)
-
-[node name="NormalHouse203" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(610, 613)
-
-[node name="NormalHouse204" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(574, 651)
-
-[node name="NormalHouse205" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(610, 653)
-
-[node name="NormalHouse206" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 585)
-
-[node name="NormalHouse207" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(527, 544)
-
-[node name="NormalHouse208" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 508)
-
-[node name="NormalHouse209" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(454, 546)
-
-[node name="NormalHouse210" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(490, 548)
+position = Vector2(954, 357)
 
 [node name="NormalHouse131" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(713, 338)
+position = Vector2(927, 502)
 
 [node name="NormalHouse132" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(874, 354)
+position = Vector2(950, 502)
 
 [node name="NormalHouse133" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(883, 435)
+position = Vector2(974, 502)
 
 [node name="NormalHouse134" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(834, 452)
+position = Vector2(931, 378)
 
 [node name="NormalHouse135" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(735, 482)
+position = Vector2(954, 378)
 
 [node name="NormalHouse136" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(669, 383)
+position = Vector2(927, 522)
 
 [node name="NormalHouse137" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(673, 334)
+position = Vector2(950, 522)
 
 [node name="NormalHouse138" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(785, 330)
+position = Vector2(926, 542)
 
 [node name="NormalHouse139" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(833, 315)
+position = Vector2(931, 398)
 
 [node name="NormalHouse140" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(891, 371)
+position = Vector2(954, 398)
 
 [node name="NormalHouse141" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(896, 413)
+position = Vector2(927, 461)
 
 [node name="NormalHouse142" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(850, 405)
+position = Vector2(950, 461)
 
 [node name="NormalHouse143" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(786, 487)
+position = Vector2(974, 461)
 
 [node name="NormalHouse144" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(728, 422)
+position = Vector2(931, 337)
 
 [node name="NormalHouse145" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(736, 387)
+position = Vector2(954, 337)
 
 [node name="NormalHouse146" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(876, 493)
+position = Vector2(927, 442)
 
 [node name="NormalHouse147" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(866, 311)
+position = Vector2(950, 442)
 
 [node name="NormalHouse148" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(615, 348)
+position = Vector2(974, 442)
 
 [node name="NormalHouse149" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(587, 376)
+position = Vector2(931, 318)
 
 [node name="NormalHouse150" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(587, 376)
+position = Vector2(954, 318)
 
-[node name="NormalHouse261" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(617, 316)
+[node name="NormalHouse151" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(632, 354)
 
-[node name="NormalHouse262" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(733, 289)
+[node name="NormalHouse152" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(655, 354)
 
-[node name="NormalHouse263" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(775, 284)
+[node name="NormalHouse153" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(606, 485)
 
-[node name="NormalHouse264" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(836, 275)
+[node name="NormalHouse154" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(628, 485)
 
-[node name="NormalHouse265" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(948, 321)
+[node name="NormalHouse155" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(651, 485)
 
-[node name="NormalHouse266" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(932, 416)
+[node name="NormalHouse156" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(632, 375)
 
-[node name="NormalHouse267" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(868, 456)
+[node name="NormalHouse157" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(655, 375)
 
-[node name="NormalHouse268" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(667, 481)
+[node name="NormalHouse158" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(606, 506)
 
-[node name="NormalHouse269" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(682, 441)
+[node name="NormalHouse159" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(628, 506)
 
-[node name="NormalHouse270" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(678, 415)
+[node name="NormalHouse160" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(651, 506)
 
-[node name="NormalHouse271" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(672, 359)
+[node name="NormalHouse161" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(632, 395)
 
-[node name="NormalHouse272" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(748, 367)
+[node name="NormalHouse162" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(655, 395)
 
-[node name="NormalHouse273" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(730, 328)
+[node name="NormalHouse163" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(652, 545)
 
-[node name="NormalHouse274" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(791, 359)
+[node name="NormalHouse164" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(628, 526)
 
-[node name="NormalHouse275" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
-position = Vector2(703, 533)
+[node name="NormalHouse165" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(651, 526)
+
+[node name="NormalHouse166" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(632, 334)
+
+[node name="NormalHouse167" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(655, 334)
+
+[node name="NormalHouse168" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(606, 465)
+
+[node name="NormalHouse169" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(628, 465)
+
+[node name="NormalHouse170" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(651, 465)
+
+[node name="NormalHouse171" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(632, 315)
+
+[node name="NormalHouse172" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(655, 315)
+
+[node name="NormalHouse173" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(606, 446)
+
+[node name="NormalHouse174" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(628, 446)
+
+[node name="NormalHouse175" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(651, 446)
+
+[node name="NormalHouse176" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(814, 581)
+
+[node name="NormalHouse177" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(837, 581)
+
+[node name="NormalHouse178" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(861, 581)
+
+[node name="NormalHouse179" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(883, 581)
+
+[node name="NormalHouse180" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(906, 581)
+
+[node name="NormalHouse181" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(678, 545)
+
+[node name="NormalHouse182" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(701, 545)
+
+[node name="NormalHouse183" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(725, 545)
+
+[node name="NormalHouse184" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(747, 545)
+
+[node name="NormalHouse185" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(770, 545)
+
+[node name="NormalHouse186" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(678, 565)
+
+[node name="NormalHouse187" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(701, 565)
+
+[node name="NormalHouse188" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(725, 565)
+
+[node name="NormalHouse189" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(747, 565)
+
+[node name="NormalHouse190" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(770, 565)
+
+[node name="NormalHouse191" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(814, 561)
+
+[node name="NormalHouse192" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(837, 561)
+
+[node name="NormalHouse193" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(861, 561)
+
+[node name="NormalHouse194" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(883, 561)
+
+[node name="NormalHouse195" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(906, 561)
+
+[node name="NormalHouse196" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(814, 542)
+
+[node name="NormalHouse197" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(837, 542)
+
+[node name="NormalHouse198" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(861, 542)
+
+[node name="NormalHouse199" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(883, 542)
+
+[node name="NormalHouse200" parent="building/NormalHouse" instance=ExtResource("6_8ax85")]
+position = Vector2(906, 542)
 
 [node name="Shipping" type="Node" parent="building"]
 
 [node name="LumberMill" type="Node" parent="building"]
+
+[node name="lumber_mill" parent="building/LumberMill" instance=ExtResource("3_bdhmt")]
+position = Vector2(887, 420)
+
+[node name="lumber_mill3" parent="building/LumberMill" instance=ExtResource("3_bdhmt")]
+position = Vector2(791, 539)
+
+[node name="lumber_mill2" parent="building/LumberMill" instance=ExtResource("3_bdhmt")]
+position = Vector2(790, 314)
 
 [node name="player" parent="." instance=ExtResource("4_6y55y")]
 position = Vector2(793, 409)

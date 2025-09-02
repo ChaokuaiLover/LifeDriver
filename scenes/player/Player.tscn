@@ -66,6 +66,7 @@ ignore_rotation = false
 zoom = Vector2(1.75, 1.75)
 
 [node name="Panel" type="Panel" parent="Camera2D"]
+visible = false
 z_index = 5
 offset_left = -263.0
 offset_top = -277.0
@@ -84,6 +85,16 @@ scale = Vector2(0.251131, 0.221136)
 text = "test"
 label_settings = SubResource("LabelSettings_i5l0h")
 script = ExtResource("4_bheox")
+
+[node name="Button2" type="Button" parent="Camera2D/Panel/time_show"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 537.031
+offset_top = 89.6022
+offset_right = 632.031
+offset_bottom = 129.602
+text = "Buy Wood"
+clip_text = true
 
 [node name="time_top" type="Label" parent="Camera2D/Panel"]
 layout_mode = 2
@@ -154,10 +165,10 @@ label_settings = SubResource("LabelSettings_655r6")
 [node name="Button" type="Button" parent="Camera2D/Panel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 139.987
-offset_top = 19.1538
-offset_right = 229.987
-offset_bottom = 53.1538
+offset_left = 140.0
+offset_top = 19.0
+offset_right = 216.0
+offset_bottom = 50.0
 scale = Vector2(0.319699, 0.284303)
 text = "Stimulus"
 

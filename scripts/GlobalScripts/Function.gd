@@ -21,7 +21,7 @@ func debt_compounding(current_debt,current_interest_rates):
 func produce_goods(unit,worker,wage,amount,multiplier):
 	unit.money -= int(float(amount * wage) * multiplier)
 	worker.money += int(float(amount * wage) * multiplier)
-	unit.goods_stock += floor((float(amount) * multiplier))
+	unit.goods_stock += int((float(amount) * multiplier))
 	worker.energy -= float(amount)
 	
 

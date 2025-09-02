@@ -30,11 +30,10 @@ var production: int
 var production_statement: Array = [0,0]
 var profitable: bool
 
-var data_calculate_cycle_start: float = randf_range(4,6)
+var data_calculate_cycle_start: float = randf_range(2,3)
 var data_calculate_cycle: float
 
 var goods_produce_amount: int = 20
-var goods_produce_multiplier: int = 3
 var hire_status: bool = true
 var sell_status: bool = true
 
@@ -69,12 +68,12 @@ func _ready():
 			body.work_state = "doing"
 			
 			Function.produce_goods(self,body,wage_offer,goods_produce_amount,body.goods_produce_multiplier['food'])
-			expense += goods_produce_amount * wage_offer * body.goods_produce_multiplier['food']
-			production += goods_produce_amount * body.goods_produce_multiplier['food']
-			body.income += goods_produce_amount * wage_offer * body.goods_produce_multiplier['food']
+			expense += int(goods_produce_amount * wage_offer * body.goods_produce_multiplier['food'])
+			production += int(goods_produce_amount * body.goods_produce_multiplier['food'])
+			body.income += int(float(goods_produce_amount) * float(wage_offer) * float(body.goods_produce_multiplier['food']))
 			body.work_state = "success"
 			body.mood = "tired"
-			await get_tree().create_timer(3).timeout
+			await get_tree().create_timer(1).timeout
 		elif body.status == "Work" and body.energy >= 50 and body.current_target == self and !hire_status:
 			body.work_state = "fail"
 			)

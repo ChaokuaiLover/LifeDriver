@@ -1,13 +1,13 @@
 extends CharacterBody2D
 class_name Worker
-const  move_speed: float = 8000.0
-const  hungry_time: float = 150.0 #seccond
+const  move_speed: float = 20000.0
+const  hungry_time: float = 20.0 #seccond
 const  energy_start : float = 100.0
 var speed_pixel_per_second: float = move_speed/ 30.0  #pixel per second
 var energy: float
-var  energy_drain_index: float = 1.0
+var energy_drain_index: float = 1.0
 var energy_drain_rate: float = energy_start / hungry_time
-var max_age = 1200.0 #second
+var max_age = 600.0 #second
 var age: float = max_age
 var retire: bool = false
 
@@ -105,8 +105,8 @@ func _ready():
 	energy = energy_start
 	debt_calculate_cycle = debt_calculate_cycle_start
 	data_calculate_cycle = data_calculate_cycle_start
-	goods_produce_multiplier['food'] = floorf(randf_range(2,4)*10)/10
-	goods_produce_multiplier['wood'] = ((goods_produce_multiplier['food'] - 6) ** 2) ** 0.5
+	goods_produce_multiplier['food'] = floorf(randf_range(1.8,2.7) * 10)/10
+	goods_produce_multiplier['wood'] = ((goods_produce_multiplier['food'] - 4) ** 2) ** 0.5
 	
 func _process(delta: float):
 	energy = energy_drain(delta,energy)
@@ -115,7 +115,7 @@ func _process(delta: float):
 	food_reserve_need_calculating()
 	
 	if house != null and inside_house: #Having a children
-		if house.food_reserve >= 250 and age < max_age - 120 and age > 120.0 and money >= food_price * 250 and is_able_to_have_child:
+		if house.food_reserve >= 250 and age < max_age - 10 and age > 10 and money >= food_price * 450 and is_able_to_have_child:
 			is_able_to_have_child = false
 			child = child_scene.instantiate()
 			house.food_reserve -= 225
@@ -133,9 +133,9 @@ func _process(delta: float):
 	
 	#Retire condition
 	if house:
-		if debt == 0 and ((money >= int((age*(energy_start/hungry_time)) * float(food_price) * 1.2) - debt) or house.food_reserve >= (age*(energy_start/hungry_time))) and food_market:
+		if debt == 0 and ((money >= int((age*(energy_start/hungry_time)) * float(food_price) * 2) - debt) or house.food_reserve >= (age*(energy_start/hungry_time))) and food_market:
 			retire = true
-		elif debt > 0 or ((money < int((age*(energy_start/hungry_time)) * float(food_price) * 1.0) - debt) or house.food_reserve < (age*(energy_start/hungry_time))) :
+		else:
 			retire = false
 		
 	if debt > 0 and interest_rates > 0 and debt_calculate_cycle <= 0:

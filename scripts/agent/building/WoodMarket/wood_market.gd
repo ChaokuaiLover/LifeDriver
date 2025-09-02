@@ -18,7 +18,7 @@ var expenditure_growth_statement: Array
 var productivity: int
 var productivity_statement: Array = [0,0,0,0,0,0,0,0,0,0,0]
 
-var data_calculate_cycle_start: float = 5.0
+var data_calculate_cycle_start: float = 10.0
 var data_calculate_cycle: float
 var interest_rates = Data.InterestratesStart / 100
 var debt_calculate_cycle_start: float = Data.DebtCalculateCycleStart
@@ -58,7 +58,7 @@ func _ready():
 			income += price * pieces
 			sales += pieces
 			body.buy_food_state = "success"
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(0.5).timeout
 			
 		elif body.status == "BuyFood" and body.current_target == self and sell_status == false:
 			body.buy_food_state = "fail"
@@ -94,11 +94,16 @@ func _process(delta: float):
 					
 			else: _adjust_price(1)
 					
-		margin = float(roundf((goods_stock / 20.0) ** (0.5)) + 5.0) / 100.0
+		if goods_stock <= 20000:
+			margin = float(floor(float((float(goods_stock) / 50000) + 0.05) * 100) / 100)
+		elif goods_stock > 20000:
+			margin = float(floor(float((float(goods_stock) / 200000) + 0.35) * 100) / 100)
 		price_offer = int(float(price) * (1.0 - margin))
-		print("margin: ", margin * 100 , "%")
-		print("income:",income_statement)
-		print("income_growth:",income_growth_statement)
+		if false :
+			print("margin: ", margin * 100 , "%")
+			print("income:",income_statement)
+			print("income_growth:",income_growth_statement)
+		
 		data_calculate_cycle = data_calculate_cycle_start
 		
 	if goods_stock <  goods_stock_limit * 0.005:
