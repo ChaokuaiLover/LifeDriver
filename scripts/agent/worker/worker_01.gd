@@ -105,7 +105,7 @@ func _ready():
 	energy = energy_start
 	debt_calculate_cycle = debt_calculate_cycle_start
 	data_calculate_cycle = data_calculate_cycle_start
-	goods_produce_multiplier['food'] = floorf(randf_range(1.8,2.7) * 10)/10
+	goods_produce_multiplier['food'] = floorf(randf_range(1.2,3.8) * 10)/10
 	goods_produce_multiplier['wood'] = ((goods_produce_multiplier['food'] - 4) ** 2) ** 0.5
 	
 func _process(delta: float):

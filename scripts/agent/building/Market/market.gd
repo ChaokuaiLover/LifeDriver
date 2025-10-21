@@ -18,7 +18,7 @@ var expenditure_growth_statement: Array
 var productivity: int
 var productivity_statement: Array = [0,0,0,0,0,0,0,0,0,0,0]
 
-var data_calculate_cycle_start: float = 10.0
+var data_calculate_cycle_start: float = 20.0
 var data_calculate_cycle: float
 var interest_rates = Data.InterestratesStart / 100
 var debt_calculate_cycle_start: float = Data.DebtCalculateCycleStart
@@ -34,7 +34,7 @@ var buy_status: bool = true
 var price_plan: int = -1
 var price_change: float = 0
 var margin: float = 0.1
-var price_change_rates: float = 1.05
+var price_change_rates: float = 1.1
 
 
 func _adjust_price(plan):

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Life Driver"
 run/main_scene="res://scenes/game/game.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 run/max_fps=30
 config/icon="res://PJIcon.png"
 
@@ -85,7 +85,8 @@ down={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 2d/shadow_atlas/size=128
 textures/default_filters/anisotropic_filtering_level=0
 environment/ssao/quality=1

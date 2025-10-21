@@ -61,21 +61,21 @@ move_speed = 8000.0
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_ls3rr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
+position = Vector2(0.500031, -1.99998)
 ignore_rotation = false
 zoom = Vector2(1.75, 1.75)
 
-[node name="Panel" type="Panel" parent="Camera2D"]
-visible = false
-z_index = 5
-offset_left = -263.0
-offset_top = -277.0
-offset_right = -52.0
-offset_bottom = -228.0
+[node name="Panel" type="Panel" parent="."]
+z_index = 6
+offset_left = -323.0
+offset_top = -179.0
+offset_right = -112.0
+offset_bottom = -130.0
 scale = Vector2(1.17154, 1.51406)
 script = ExtResource("3_3wkd1")
 
-[node name="time_show" type="Label" parent="Camera2D/Panel"]
+[node name="time_show" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 5.12147
 offset_top = 8.58618
@@ -86,7 +86,7 @@ text = "test"
 label_settings = SubResource("LabelSettings_i5l0h")
 script = ExtResource("4_bheox")
 
-[node name="Button2" type="Button" parent="Camera2D/Panel/time_show"]
+[node name="Button2" type="Button" parent="Panel/time_show"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 537.031
@@ -96,7 +96,7 @@ offset_bottom = 129.602
 text = "Buy Wood"
 clip_text = true
 
-[node name="time_top" type="Label" parent="Camera2D/Panel"]
+[node name="time_top" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 4.26788
 offset_right = 80.2679
@@ -105,7 +105,7 @@ scale = Vector2(0.235511, 0.245574)
 text = "Time"
 label_settings = SubResource("LabelSettings_thioy")
 
-[node name="TotalMoney" type="Label" parent="Camera2D/Panel"]
+[node name="TotalMoney" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 170.715
 offset_top = 18.4933
@@ -115,7 +115,7 @@ scale = Vector2(0.201904, 0.225725)
 text = "total money"
 label_settings = SubResource("LabelSettings_mt5l5")
 
-[node name="TotalDebt" type="Label" parent="Camera2D/Panel" node_paths=PackedStringArray("player")]
+[node name="TotalDebt" type="Label" parent="Panel" node_paths=PackedStringArray("player")]
 layout_mode = 0
 offset_left = 150.23
 offset_top = 33.6843
@@ -126,9 +126,9 @@ text = "test"
 label_settings = SubResource("LabelSettings_h6xqn")
 horizontal_alignment = 2
 script = ExtResource("8_8l178")
-player = NodePath("../../..")
+player = NodePath("../..")
 
-[node name="TotalMoneyShow" type="Label" parent="Camera2D/Panel" node_paths=PackedStringArray("player")]
+[node name="TotalMoneyShow" type="Label" parent="Panel" node_paths=PackedStringArray("player")]
 layout_mode = 0
 offset_left = 150.23
 offset_top = 25.7586
@@ -139,9 +139,9 @@ text = "test"
 label_settings = SubResource("LabelSettings_2ln76")
 horizontal_alignment = 2
 script = ExtResource("4_bj0et")
-player = NodePath("../../..")
+player = NodePath("../..")
 
-[node name="InterestRatesShow" type="Label" parent="Camera2D/Panel"]
+[node name="InterestRatesShow" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 4.26789
 offset_top = 29.0609
@@ -152,7 +152,7 @@ text = "test"
 label_settings = SubResource("LabelSettings_nx4nl")
 script = ExtResource("4_3tanj")
 
-[node name="InterestRates" type="Label" parent="Camera2D/Panel"]
+[node name="InterestRates" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 4.26789
 offset_top = 21.7957
@@ -162,7 +162,7 @@ scale = Vector2(0.235371, 0.216646)
 text = "Interested Rates"
 label_settings = SubResource("LabelSettings_655r6")
 
-[node name="Button" type="Button" parent="Camera2D/Panel"]
+[node name="Button" type="Button" parent="Panel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 140.0
@@ -172,7 +172,7 @@ offset_bottom = 50.0
 scale = Vector2(0.319699, 0.284303)
 text = "Stimulus"
 
-[node name="SadPeopleShow" type="Label" parent="Camera2D/Panel"]
+[node name="SadPeopleShow" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 68.2862
 offset_top = 17.1724
@@ -183,7 +183,7 @@ text = "test"
 label_settings = SubResource("LabelSettings_l45e1")
 script = ExtResource("7_a7p3r")
 
-[node name="MedianWsage" type="Label" parent="Camera2D/Panel"]
+[node name="MedianWsage" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 162.18
 offset_top = 1.98143
@@ -193,7 +193,7 @@ scale = Vector2(0.214583, 0.207322)
 text = "Median.Wage"
 label_settings = SubResource("LabelSettings_r055t")
 
-[node name="WageMedian" type="Label" parent="Camera2D/Panel"]
+[node name="WageMedian" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 192.055
 offset_top = 10.5676
@@ -204,7 +204,7 @@ text = "test"
 label_settings = SubResource("LabelSettings_ajsp6")
 script = ExtResource("6_qco1f")
 
-[node name="PoppulationLabel" type="Label" parent="Camera2D/Panel"]
+[node name="PoppulationLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 67.4326
 offset_right = 256.433
@@ -213,7 +213,7 @@ scale = Vector2(0.240201, 0.240201)
 text = "poppulation"
 label_settings = SubResource("LabelSettings_nqcf8")
 
-[node name="PoppulationShow" type="Label" parent="Camera2D/Panel"]
+[node name="PoppulationShow" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 68.2862
 offset_top = 8.58619

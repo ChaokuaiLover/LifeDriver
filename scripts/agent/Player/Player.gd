@@ -4,24 +4,26 @@ var market
 @export var move_speed : float = 1000
 var time: float
 var total_debt: int = 0
-
+func _buy_wood():
+		market = get_tree().get_first_node_in_group("WoodMarket")
+		var buy_amount = 1000
+		if market.goods_stock < buy_amount:
+			return
+		market.money += market.price * buy_amount
+		market.goods_stock -= buy_amount 
+		market.income += market.price * buy_amount
+		market.sales += buy_amount
+		
 func _ready():
 	%Button.pressed.connect(func stimulus():
 		all_worker = get_tree().get_nodes_in_group("Worker")
 		for worker in all_worker:
 			worker.money += 100000
 		)
-	%Button2.pressed.connect(func _buy_wood():
-		market = get_tree().get_first_node_in_group("WoodMarket")
-		if market.goods_stock < 5000:
-			return
-		market.money += market.price * 5000
-		market.goods_stock -= 5000 
-		market.income += market.price * 5000
-		market.sales += 5000
-		)
+	%Button2.pressed.connect(_buy_wood)
 func _process(delta: float):
 	time += delta
+	#_buy_wood()
 func _physics_process(_delta):
 	
 	var input_direction = Vector2(
